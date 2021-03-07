@@ -19,6 +19,10 @@
       <excludeFolder url="file://$MODULE_DIR$/__public__" />
       <excludeFolder url="file://$MODULE_DIR$/packages/server/__resources__" />
       <excludeFolder url="file://$MODULE_DIR$/packages/server/__storage__" />
+      <excludeFolder url="file://$MODULE_DIR$/@web" />
+      <excludeFolder url="file://$MODULE_DIR$/@worker" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/worker/.idea" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

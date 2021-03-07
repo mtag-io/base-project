@@ -25,25 +25,26 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="bce4ddf8-870d-47b1-8c67-bb643434ec36">
-        <schema name="devdb" object-types="view, table" />
+      <connection connection-id="5590b133-a2d4-4932-b3ce-ebc2ce02ddcc">
+        <schema name="devdb" object-types="index, column, table, view, dataset trigger, constraint" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="bce4ddf8-870d-47b1-8c67-bb643434ec36">
-      <console name="docke-mysql" type="STANDARD" schema="" session="Main" />
-      <console name="local-docker-mysql" type="STANDARD" schema="" session="Main" />
+    <connection id="5590b133-a2d4-4932-b3ce-ebc2ce02ddcc">
+      <console name="Connection" type="STANDARD" schema="devdb" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="bce4ddf8-870d-47b1-8c67-bb643434ec36" />
+    <connection id="5590b133-a2d4-4932-b3ce-ebc2ce02ddcc" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="bce4ddf8-870d-47b1-8c67-bb643434ec36" dataset="devdb.user" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="5590b133-a2d4-4932-b3ce-ebc2ce02ddcc" dataset="devdb.worker" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="5590b133-a2d4-4932-b3ce-ebc2ce02ddcc" dataset="devdb.preset" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="5590b133-a2d4-4932-b3ce-ebc2ce02ddcc" dataset="devdb.profile" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -71,9 +72,9 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="bce4ddf8-870d-47b1-8c67-bb643434ec36" active="true">
+      <connection id="5590b133-a2d4-4932-b3ce-ebc2ce02ddcc" active="true">
         <database>
-          <name value="local-docker-mysql" />
+          <name value="Connection" />
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
@@ -84,7 +85,7 @@
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="3306" />
-          <database value="mysql" />
+          <database value="devdb" />
           <type value="USER_PASSWORD" />
           <user value="root" />
           <deprecated-pwd value="c2VjcmV0" />
@@ -275,6 +276,7 @@
       <qualified-text-editor text-length-threshold="300">
         <content-types>
           <content-type name="Text" enabled="true" />
+          <content-type name="Properties" enabled="true" />
           <content-type name="XML" enabled="true" />
           <content-type name="DTD" enabled="true" />
           <content-type name="HTML" enabled="true" />
@@ -285,8 +287,6 @@
           <content-type name="JavaScript" enabled="true" />
           <content-type name="JSON" enabled="true" />
           <content-type name="JSON5" enabled="true" />
-          <content-type name="JSP" enabled="true" />
-          <content-type name="JSPx" enabled="true" />
           <content-type name="YAML" enabled="true" />
         </content-types>
       </qualified-text-editor>
