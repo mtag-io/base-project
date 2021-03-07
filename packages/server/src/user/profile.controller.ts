@@ -11,8 +11,9 @@ import { User } from "./user.entity";
 import { restrictToId } from "../@helpers/types";
 import { RestrictId } from "../@types/restrict-to.type";
 import {isAdmin} from "../auth/auth.helpers";
+import { ENDPOINTS, ROOT } from "src/@config/endpoints.config";
 
-@Controller("profile")
+@Controller(ENDPOINTS.PROFILE)
 export class ProfileController {
   constructor(
     private readonly profileService: ProfileService,
@@ -20,7 +21,7 @@ export class ProfileController {
   ) {
   }
 
-  @Post("/")
+  @Post(ROOT)
   @Role(ROLES.ADMIN)
   async createProfile(
     @Body() profileDto: PartialProfileDto): Promise<HttpData> {
@@ -30,7 +31,7 @@ export class ProfileController {
     return httpData(profile);
   }
 
-  @Patch("/:_id")
+  @Patch(`${ROOT}:_id`)
   @Role([ROLES.REGISTERED, ROLES.ADMIN])
   async updateProfile(
     @GetUser() user: User,
@@ -42,7 +43,7 @@ export class ProfileController {
     throw new NotFoundException("Profile not found");
   }
 
-  @Delete("/:_id")
+  @Delete(`${ROOT}:_id`)
   @Role(ROLES.ADMIN)
   async removeProfile(
     @Param("_id") _id: number
@@ -52,7 +53,7 @@ export class ProfileController {
     throw new NotFoundException("No profile found");
   }
 
-  @Get("/:_id")
+  @Get(`${ROOT}:_id`)
   @Role([ROLES.REGISTERED, ROLES.ADMIN])
   async getProfile(
     @GetUser() user: User,
@@ -63,7 +64,7 @@ export class ProfileController {
     return httpData(profile);
   }
 
-  @Get("/")
+  @Get(ROOT)
   @Role(ROLES.ADMIN)
   async getProfiles(
     @Body() filter: PartialProfileDto = {}

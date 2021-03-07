@@ -11,8 +11,9 @@ import { HttpData, HttpSuccess } from "../@types/http.types";
 import { Link } from "./link.entity";
 import { CreateLinkDto } from "./@types/create-link.dto";
 import { UserService } from "../user/user.service";
+import { ENDPOINTS, ROOT } from "src/@config/endpoints.config";
 
-@Controller("link")
+@Controller(ENDPOINTS.LINK)
 @UseGuards(AuthGuard(), RolesGuard)
 export class LinkController {
 
@@ -22,7 +23,7 @@ export class LinkController {
   ) {
   }
 
-  @Post("/")
+  @Post(ROOT)
   @Role(ROLES.ADMIN)
   async createLink(
     @Body() createDto: CreateLinkDto) {
@@ -31,14 +32,14 @@ export class LinkController {
     return await this.linkService.createLink({ user, action: createDto.action });
   }
 
-  @Get("/")
+  @Get(ROOT)
   @Role(ROLES.ADMIN)
   async getLinks(@Body() filter: PartialLinkDto): Promise<HttpData> {
     const links: Link[] = await this.linkService.getLinks(filter);
     return httpData(links);
   }
 
-  @Get("/:_id")
+  @Get(`${ROOT}:_id`)
   @Role(ROLES.ADMIN)
   async getLink(@Param("_id") _id: number): Promise<HttpData | void> {
     const link = await this.linkService.getLink(_id);
@@ -46,7 +47,7 @@ export class LinkController {
     throw new NotFoundException("Link not found");
   }
 
-  @Get("/verify/:hash")
+  @Get(`${ENDPOINTS.LINK_VERIFY}/:hash`)
   @Role(ROLES.ADMIN)
   async checkHash(@Param("hash") hash: string): Promise<HttpData | void> {
     const link = await this.linkService.checkHash(hash);
@@ -56,7 +57,7 @@ export class LinkController {
     return httpData(link);
   }
 
-  @Patch("/:_id")
+  @Patch(`${ROOT}:_id`)
   @Role(ROLES.ADMIN)
   async updateLink(
     @Param("_id") _id: number,
@@ -66,7 +67,7 @@ export class LinkController {
     throw new NotFoundException("Link not found");
   }
 
-  @Delete("/:_id")
+  @Delete(`${ROOT}:_id`)
   @Role(ROLES.ADMIN)
   async deleteLink(
     @Param("_id") _id: number): Promise<HttpSuccess | void> {

@@ -1,5 +1,5 @@
 import {EntityRepository, Repository} from "typeorm";
-import {Preset} from "./entities/preset.entity";
+import {Preset} from "./preset.entity";
 import {CreatePresetDto} from "./@types/create-preset.dto";
 
 @EntityRepository(Preset)

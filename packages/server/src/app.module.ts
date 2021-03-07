@@ -7,7 +7,6 @@ import {AuthModule} from "./auth/auth.module";
 import {AccessLogger} from "./@middleware/access-logger.middleware";
 import {NotificationModule} from "./notification/notification.module";
 import {WorkerModule} from './worker/worker.module';
-import {PresetModule} from './worker/preset/preset.module';
 
 @Module({
 
@@ -24,8 +23,7 @@ import {PresetModule} from './worker/preset/preset.module';
         AuthModule,
         UserModule,
         NotificationModule,
-        WorkerModule,
-        PresetModule
+        WorkerModule
     ]
 })
 

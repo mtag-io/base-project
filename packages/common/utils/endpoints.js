@@ -22,11 +22,12 @@ const baseEndpoints = endpoints => Object.keys(endpoints)
 
 
 const controllerEndpoints = endpoints => {
+    const be = baseEndpoints(endpoints)
     return {
-        ...baseEndpoints(endpoints),
+        ...be,
         ...Object.keys(endpoints).reduce((acc, k) => {
             if (typeof endpoints[k] !== 'string')
-                return {...acc, ...flatten(endpoints[k])}
+                return {...acc, ...flatten(endpoints[k], toKey(k))}
             return acc
         }, {})
     }

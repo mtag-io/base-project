@@ -20,19 +20,19 @@ describe('baseEndpoints', () => {
 describe('flatten', () => {
 
     it('should flatten an endpoint object', () => {
-        const actual = flatten(endpoints['auth'])
+        const actual = flatten(endpoints['auth'], 'auth')
         const expected = {
-            "ACTIVATE": "/activate",
-            "DEACTIVATE": "/deactivate",
-            "PASSWORD_RESET_ACCESS": "/password-reset/access",
-            "PASSWORD_RESET_REQUEST": "/password-reset/request",
-            "REFRESH": "/refresh",
-            "SIGNIN": "/signin",
-            "SIGNUP": "/signup",
-            "VERIFY_EMAIL_ACCESS": "/verify-email/access",
-            "VERIFY_EMAIL_REQUEST": "/verify-email/request"
+            "AUTH_ACTIVATE": "/activate",
+            "AUTH_DEACTIVATE": "/deactivate",
+            "AUTH_PASSWORD_RESET_ACCESS": "/password-reset/access",
+            "AUTH_PASSWORD_RESET_REQUEST": "/password-reset/request",
+            "AUTH_REFRESH": "/refresh",
+            "AUTH_SIGNIN": "/signin",
+            "AUTH_SIGNUP": "/signup",
+            "AUTH_VERIFY_EMAIL_ACCESS": "/verify-email/access",
+            "AUTH_VERIFY_EMAIL_REQUEST": "/verify-email/request",
         }
-        expect(expected).deep.equal(actual)
+        expect(actual).deep.equal(expected)
     })
 })
 
@@ -41,23 +41,23 @@ describe('controllerEndpoints', () => {
     it('should fill in the controllerEndpoints', () => {
         const actual = controllerEndpoints(endpoints)
         const expected = {
-            "ACTIVATE": "/activate",
+            "AUTH_ACTIVATE": "/activate",
             "AUTH": "/auth",
-            "DEACTIVATE": "/deactivate",
+            "AUTH_DEACTIVATE": "/deactivate",
             "LINK": "/link",
             "NOTIFICATION": "/notification",
-            "PASSWORD_RESET_ACCESS": "/password-reset/access",
-            "PASSWORD_RESET_REQUEST": "/password-reset/request",
+            "AUTH_PASSWORD_RESET_ACCESS": "/password-reset/access",
+            "AUTH_PASSWORD_RESET_REQUEST": "/password-reset/request",
             "PROFILE": "/profile",
-            "REFRESH": "/refresh",
-            "SIGNIN": "/signin",
-            "SIGNUP": "/signup",
+            "AUTH_REFRESH": "/refresh",
+            "AUTH_SIGNIN": "/signin",
+            "AUTH_SIGNUP": "/signup",
             "SOURCE": "/source",
             "USER": "/user",
-            "VERIFY_EMAIL_ACCESS": "/verify-email/access",
-            "VERIFY_EMAIL_REQUEST": "/verify-email/request"
+            "AUTH_VERIFY_EMAIL_ACCESS": "/verify-email/access",
+            "AUTH_VERIFY_EMAIL_REQUEST": "/verify-email/request"
         }
-        expect(expected).deep.equal(actual)
+        expect(actual).deep.equal(expected)
     })
 })
 

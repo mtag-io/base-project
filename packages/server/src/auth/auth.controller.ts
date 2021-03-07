@@ -32,8 +32,9 @@ import { AuthResponseDto } from "./@types/auth-response.dto";
 import { RolesGuard } from "./@guards/roles.guard";
 import { AuthGuard } from "@nestjs/passport";
 import {GetRefreshToken} from "./@decorators/get-refresh-token.decorator";
+import { ENDPOINTS } from "src/@config/endpoints.config";
 
-@Controller(AUTH)
+@Controller(ENDPOINTS.AUTH)
 export class AuthController {
   constructor(
     private readonly authService: AuthService,
@@ -43,48 +44,48 @@ export class AuthController {
 
   @UseInterceptors(AuthResponseInterceptor)
   @HttpCode(200)
-  @Post("/signin")
+  @Post(ENDPOINTS.AUTH_SIGNIN)
   signin(
     @Body()  authDto: AuthDto): any {
     return this.authService.signin(authDto);
   }
 
   @UseInterceptors(AuthResponseInterceptor)
-  @Post("/signup")
+  @Post(ENDPOINTS.AUTH_SIGNUP)
   async signup(
     @Body() authDto: AuthDto): Promise<AuthResponseDto | HttpSuccess> {
     return await this.authService.signup(authDto);
   }
 
-  @Get(`${EMAIL_VERIFY_EMAIL}/:userId`)
+  @Get(`${ENDPOINTS.AUTH_EMAIL_VERIFY_REQUEST}/:userId`)
   async verifyEmailRequest(
     @Param("userId") userId: string) {
     return await this.authService.verifyEmailRequest(userId);
   }
 
-  @Get(`/${EMAIL_VERIFY_EMAIL}/:link`)
+  @Get(`${ENDPOINTS.AUTH_EMAIL_VERIFY_ACCESS}/:link`)
   async verifyEmailAccess(@Param("link") link: string): Promise<HttpSuccess> {
     return await this.authService.verifyEmailAccess(link);
   }
 
-  @Get(`/${RESET_PASSWORD}/${REQUEST}/:email`)
+  @Get(`${ENDPOINTS.AUTH_PASSWORD_RESET_REQUEST}/:email`)
   async resetPasswordRequest(@Param("email") email: string): Promise<HttpSuccess> {
     return await this.authService.resetPasswordRequest(email);
   }
 
-  @Get(`/${RESET_PASSWORD}/${ACCESS}/:hash`)
+  @Get(`${ENDPOINTS.AUTH_PASSWORD_RESET_ACCESS}/:hash`)
   async resetPasswordAccess(@Param() params) {
     const { hash } = params;
     return await this.authService.resetPasswordAccess(hash);
   }
 
-  @Post(`/${RESET_PASSWORD}`)
+  @Post(`${ENDPOINTS.AUTH_PASSWORD_RESET}`)
   async resetPasswordSubmit(
     @Body() resetPasswordDto: ResetPasswordDto): Promise<HttpSuccess> {
     return await this.authService.resetPasswordSubmit(resetPasswordDto);
   }
 
-  @Get(`${ACTIVATE}/:id`)
+  @Get(`${ENDPOINTS.AUTH_ACTIVATE}/:id`)
   @UseGuards(AuthGuard(), RolesGuard)
   @Role(ROLES.ADMIN)
   async activate(@Param("id") id: string): Promise<HttpSuccess | void> {
@@ -93,7 +94,7 @@ export class AuthController {
     else throw new NotFoundException("User not found");
   }
 
-  @Get(`${DEACTIVATE}/:id`)
+  @Get(`${ENDPOINTS.AUTH_DEACTIVATE}/:id`)
   @UseGuards(AuthGuard(), RolesGuard)
   @Role(ROLES.ADMIN)
   async deactivate(@Param("id") id: string): Promise<HttpSuccess | void> {
@@ -102,7 +103,7 @@ export class AuthController {
     throw new NotFoundException("User not found");
   }
 
-  @Get(`${PROMOTE_ADMIN}/:id`)
+  @Get(`${ENDPOINTS.AUTH_PROMOTE_ADMIN}/:id`)
   @UseGuards(AuthGuard(), RolesGuard)
   @Role(ROLES.ADMIN)
   async promoteAdmin(@Param("id") id: string): Promise<HttpSuccess | void> {
@@ -111,7 +112,7 @@ export class AuthController {
     throw new NotFoundException("User not found");
   }
 
-  @Get('refresh')
+  @Get(ENDPOINTS.AUTH_REFRESH)
   async refresh(
       @GetRefreshToken() token: string
   ){

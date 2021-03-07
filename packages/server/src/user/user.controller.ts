@@ -12,8 +12,9 @@ import { UserService } from "./user.service";
 import { GetUser } from "./@decorators/get-user.decorator";
 import { User } from "./user.entity";
 import {isAdmin} from "../auth/auth.helpers";
+import { ENDPOINTS, ROOT } from "src/@config/endpoints.config";
 
-@Controller(USER)
+@Controller(ENDPOINTS.USER)
 @UseGuards(AuthGuard(), RolesGuard)
 export class UserController {
 
@@ -22,7 +23,7 @@ export class UserController {
   ) {
   }
 
-  @Post("/")
+  @Post(ROOT)
   @Role(ROLES.ADMIN)
   async createUser(
     @Body() createDto: CreateUserDto): Promise<HttpData> {
@@ -30,7 +31,7 @@ export class UserController {
     return httpData(user);
   }
 
-  @Patch("/:userId")
+  @Patch(`${ROOT}:userId`)
   @Role([ROLES.REGISTERED, ROLES.ADMIN])
   async updateUser(
     @GetUser() user: User,
@@ -42,7 +43,7 @@ export class UserController {
     throw new NotFoundException("User not found");
   }
 
-  @Delete("/:userId")
+  @Delete(`${ROOT}:userId`)
   @Role([ROLES.REGISTERED, ROLES.ADMIN])
   async deleteUser(
     @GetUser() user: User,
@@ -54,7 +55,7 @@ export class UserController {
     throw new NotFoundException("No user found");
   }
 
-  @Get("/:userId")
+  @Get(`${ROOT}:userId`)
   @Role([ROLES.REGISTERED, ROLES.ADMIN])
   async getUser(
     @GetUser() user: User,
@@ -65,7 +66,7 @@ export class UserController {
     return httpData(_user);
   }
 
-  @Get("/")
+  @Get(ROOT)
   @Role(ROLES.ADMIN)
   async getAll(@Query() filter: PartialUserDto): Promise<HttpData> {
     const users = await this.userService.getUsers(filter);

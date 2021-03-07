@@ -16,8 +16,9 @@ import { GetUser } from "../user/@decorators/get-user.decorator";
 import { HttpData, HttpSuccess } from "../@types/http.types";
 import { restrictToId, restrictToWhere } from "../@helpers/types";
 import {isAdmin} from "../auth/auth.helpers";
+import { ENDPOINTS, ROOT } from "src/@config/endpoints.config";
 
-@Controller("notifications")
+@Controller(ENDPOINTS.NOTIFICATION)
 @UseGuards(AuthGuard(), RolesGuard)
 export class NotificationController {
   constructor(
@@ -25,7 +26,7 @@ export class NotificationController {
     private readonly userService: UserService) {
   }
 
-  @Post()
+  @Post(ROOT)
   @Role(ROLES.ADMIN)
   async createNotification(
     @Body() createDto: CreateNotificationDto) {
@@ -34,7 +35,7 @@ export class NotificationController {
     return this.notificationService.createNotification(createNotification);
   }
 
-  @Patch(":_id")
+  @Patch(`${ROOT}:_id`)
   @Role(ROLES.ADMIN)
   async updateNotification(
     @Body() partialDto: PartialNotificationDto,
@@ -47,7 +48,7 @@ export class NotificationController {
     return httpSuccess("Notification updated");
   }
 
-  @Get("/mark-read/:_id")
+  @Get(`${ENDPOINTS.NOTIFICATION_MARK_READ}:_id`)
   @Role([ROLES.REGISTERED, ROLES.ADMIN])
   async markRead(
     @Param("_id") _id: number,
@@ -58,7 +59,7 @@ export class NotificationController {
     return httpSuccess("Notification marked as read.");
   }
 
-  @Get("/")
+  @Get(ROOT)
   @Role([ROLES.REGISTERED, ROLES.ADMIN])
   async getNotifications(
     @GetUser() user: User,
@@ -69,7 +70,7 @@ export class NotificationController {
     return httpData(notifications);
   }
 
-  @Get("/:_id")
+  @Get(`${ROOT}:_id`)
   @Role([ROLES.REGISTERED, ROLES.ADMIN])
   async getNotification(
     @Param("_id") _id: number,
@@ -80,7 +81,7 @@ export class NotificationController {
     return httpData(notification);
   }
 
-  @Delete(":_id")
+  @Delete(`${ROOT}:_id`)
   @Role([ROLES.REGISTERED, ROLES.ADMIN])
   removeNotification(
     @Param("_id") _id: number,

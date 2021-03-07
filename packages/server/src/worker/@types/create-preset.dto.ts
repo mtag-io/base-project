@@ -1,5 +1,5 @@
 import {IsString} from "class-validator";
-import {JsonValidator} from "../../../@validation/json.validation";
+import {JsonValidator} from "../../@validation/json.validation";
 
 export class CreatePresetDto {
 

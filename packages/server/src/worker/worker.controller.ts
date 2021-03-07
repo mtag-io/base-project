@@ -8,8 +8,9 @@ import {GetUser} from "../user/@decorators/get-user.decorator";
 import {User} from "../user/user.entity";
 import {WorkerService} from "./worker.service";
 import { Get } from "@nest/core";
+import {ENDPOINTS, ROOT} from "../@config/endpoints.config";
 
-@Controller("worker")
+@Controller(ENDPOINTS.WORKER)
 @UseGuards(AuthGuard())
 export class WorkerController {
 
@@ -18,7 +19,7 @@ export class WorkerController {
     ) {
     }
 
-    @Post("/source")
+    @Post(ENDPOINTS.WORKER_SOURCE)
     @UseInterceptors(
         FileInterceptor("source", {
             fileFilter: sourceFileFilter
@@ -32,7 +33,7 @@ export class WorkerController {
         return httpSuccess('Source file uploaded successfully');
     }
 
-    @Post("/widget")
+    @Post(ENDPOINTS.WORKER_WIDGET)
     @UseInterceptors(
         FilesInterceptor("widget",
             150, {
@@ -47,7 +48,7 @@ export class WorkerController {
         return httpSuccess('Widget file sequence uploaded successfully');
     }
 
-    @Get()
+    @Get(ROOT)
     collect(
         @GetUser() user: User
     ) {

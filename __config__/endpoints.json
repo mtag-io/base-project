@@ -17,9 +17,19 @@
     "activate": "/activate",
     "deactivate": "/deactivate"
   },
-  "source": "/source",
   "user": "/user",
   "profile": "/profile",
-  "notification": "/notification",
-  "link": "/link"
+  "notification": {
+    "_base": "/notification",
+    "mark-read": "/mark-read"
+  },
+  "link": {
+    "_base":"/link",
+    "verify": "/verify"
+  },
+  "worker": {
+    "_base": "worker",
+    "source": "/source",
+    "widget": "/widget"
+  }
 }
