@@ -12,6 +12,13 @@
       <excludeFolder url="file://$MODULE_DIR$/@server/@common" />
       <excludeFolder url="file://$MODULE_DIR$/@server" />
       <excludeFolder url="file://$MODULE_DIR$/@common" />
+      <excludeFolder url="file://$MODULE_DIR$/__data__" />
+      <excludeFolder url="file://$MODULE_DIR$/__resources__" />
+      <excludeFolder url="file://$MODULE_DIR$/__storage__" />
+      <excludeFolder url="file://$MODULE_DIR$/__config__" />
+      <excludeFolder url="file://$MODULE_DIR$/__public__" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/server/__resources__" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/server/__storage__" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

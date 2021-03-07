@@ -1,0 +1,25 @@
+{
+  "auth": {
+    "_base": "/auth",
+    "signin": "signin",
+    "signup": "signup",
+    "refresh": "refresh",
+    "verify-email": {
+      "_base": "/verify-email",
+      "request": "/request",
+      "access": "/access"
+    },
+    "password-reset": {
+      "_base": "/password-reset",
+      "request": "/request",
+      "access": "/access"
+    },
+    "activate": "/activate",
+    "deactivate": "/deactivate"
+  },
+  "source": "/source",
+  "user": "/user",
+  "profile": "/profile",
+  "notification": "/notification",
+  "link": "/link"
+}

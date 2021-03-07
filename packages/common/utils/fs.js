@@ -10,5 +10,6 @@ const readJsonAsync = async (fl = "./package.json") => {
 }
 
 module.exports  = {
-    readJson
+    readJson,
+    readJsonAsync
 }

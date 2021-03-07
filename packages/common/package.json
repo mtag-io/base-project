@@ -1,0 +1,13 @@
+{
+  "name": "@fixpics/common",
+  "version": "0.1.0",
+  "description": "Common tools for fixpics mono-repo",
+  "main": "index.js",
+  "author": "Vlad Blindu",
+  "license": "UNLICENCED",
+  "private": false,
+  "dependencies": {
+    "chai": "^4.3.3",
+    "mocha": "^8.3.1"
+  }
+}
