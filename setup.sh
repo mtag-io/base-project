@@ -27,7 +27,7 @@ if [ ! -h @worker ];
     ln -sf ./packages/worker/ ./@worker
 fi
 
-# create a storage link in the public serve dir
+# create a storage link in the public server dir
 cd __public__ || exit
 if [ ! -h __storage__ ];
   then
@@ -37,6 +37,12 @@ fi
 # create links in the server package
 cd ..
 cd ./packages/server || exit
+
+# env file from the env pool
+if [ ! -h .env ];
+  then
+    ln -s ../../../../@env-pool/fixpics/.env .
+fi
 
 if [ ! -h __config__ ];
   then
@@ -81,6 +87,12 @@ fi
 # create links in the worker package
 cd ..
 cd ./worker || exit
+
+# env file from the env pool
+if [ ! -h .env ];
+  then
+    ln -s ../../../../@env-pool/fixpics/.env .
+fi
 
 if [ ! -h __config__ ];
   then
