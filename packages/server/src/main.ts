@@ -1,9 +1,7 @@
-import {config} from 'dotenv'
+require('dotenv').config("./.env")
 import {NestFactory} from "@nestjs/core";
 import {AppModule} from "./app.module";
 import {ValidationPipe} from "@nestjs/common";
-
-config()
 
 async function bootstrap() {
 

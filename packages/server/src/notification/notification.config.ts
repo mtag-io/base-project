@@ -11,29 +11,27 @@ import {ACTIONS} from '../@config/actions.config'
 import {ADMIN_CONTACT} from "../@config/server.config";
 import {AUTH_DAEMON_CONTACT} from '../auth/auth.config'
 import {EMAIL, PAGE} from "../@constants";
-import { isProd } from "@base-project/common"
+import {isProd} from "@base-project/common"
 
-export const notificationConfig = () => {
-    return {
-        transport: isProd()
-            ? process.env["SMTP_URL_PROD"]
-            : process.env["SMTP_URL_DEV"],
-            defaults: {
+export const notificationConfig = {
+    transport: isProd()
+        ? process.env["SMTP_URL_PROD"]
+        : process.env["SMTP_URL_DEV"],
+    defaults: {
         from: ADMIN_CONTACT
     },
-        template: {
-            dir: TEMPLATE_PAGES_PATH,
-                adapter: new HandlebarsAdapter(),
-                options: {
-                strict: true
-            }
-        },
+    template: {
+        dir: TEMPLATE_PAGES_PATH,
+        adapter: new HandlebarsAdapter(),
         options: {
-            partials: {
-                dir: TEMPLATE_PARTIALS_PATH,
-                    options: {
-                    strict: true
-                }
+            strict: true
+        }
+    },
+    options: {
+        partials: {
+            dir: TEMPLATE_PARTIALS_PATH,
+            options: {
+                strict: true
             }
         }
     }

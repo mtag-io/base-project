@@ -19,10 +19,9 @@ export const PASSWORD_REGEXP = new RegExp(GLOBAL_CONFIGS['AUTH']['passwordRegexp
 export const JWT_PAYLOAD_FIELDS = ["userId"];
 export const API_KEY_OVERRIDE = true;
 
-export const jwtConfigure = () =>
-    ({
-        secret: process.env["JWT_SECRET"],
-        signOptions: { expiresIn: process.env["JWT_EXPIRATION"]}
-    });
+export const jwtConfigure = {
+    secret: process.env["JWT_SECRET"],
+    signOptions: {expiresIn: process.env["JWT_EXPIRATION"]}
+};
 
 export const apiKey = process.env["API_KEY"] || ''

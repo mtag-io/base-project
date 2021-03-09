@@ -15,7 +15,10 @@
   "exclude": [
     "node_modules",
     "dist",
-    "py-worker",
-    "__storage__"
+    "@common",
+    "__storage__",
+    "__public__",
+    "__resources__",
+    "__config__",
   ]
 }
