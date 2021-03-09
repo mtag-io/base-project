@@ -1,2 +1,2 @@
-# FIXPICS
+# base-project
 ## web

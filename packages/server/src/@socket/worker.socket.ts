@@ -1,7 +1,7 @@
 import {Injectable} from "@nestjs/common";
 import {io} from "socket.io-client";
 import {CHANNEL} from "../worker/worker.config";
-import {ConfigService} from "@nestjs/config";
+import {ACTIONS} from "../@config/actions.config";
 
 
 @Injectable()
@@ -9,10 +9,9 @@ export class WorkerSocket {
 
     private connected = false
     private socket = io("http://localhost:4848");
-    private actions = this.configService.get('ACTIONS')
+    private actions = ACTIONS
 
     constructor(
-        private readonly configService: ConfigService
     ) {
         this.connect()
         this.disconnect()

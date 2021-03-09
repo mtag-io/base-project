@@ -1,8 +1,6 @@
-import { ConfigService } from "@nestjs/config";
-import { JwtModuleOptions } from "@nestjs/jwt";
 import {GLOBAL_CONFIGS} from "../@config/global.config";
 import {APP_DOMAIN} from "../@config/server.config";
-import {upperKeys} from "@fixpics/common"
+import {upperKeys} from "@base-project/common"
 
 export const AUTH_DAEMON_CONTACT = `${GLOBAL_CONFIGS['GLOBAL']}@${APP_DOMAIN}`;
 export const APP_OPEN_AUTH = GLOBAL_CONFIGS['AUTH'].openAuth;
@@ -21,8 +19,10 @@ export const PASSWORD_REGEXP = new RegExp(GLOBAL_CONFIGS['AUTH']['passwordRegexp
 export const JWT_PAYLOAD_FIELDS = ["userId"];
 export const API_KEY_OVERRIDE = true;
 
-export const jwtConfigure = async (configService: ConfigService): Promise<JwtModuleOptions> =>
+export const jwtConfigure = () =>
     ({
-        secret: configService.get<string>("JWT_SECRET"),
-        signOptions: { expiresIn: configService.get<string>("JWT_EXPIRATION") }
+        secret: process.env["JWT_SECRET"],
+        signOptions: { expiresIn: process.env["JWT_EXPIRATION"]}
     });
+
+export const apiKey = process.env["API_KEY"] || ''

@@ -1,5 +1,5 @@
 {
-  "name": "@fixpics/server",
+  "name": "@base-project/server",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -10,7 +10,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "start:dev": "NODE_ENV=DEVELOPMENT nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
@@ -22,7 +22,7 @@
     "dev-test-run": "docker-compose up & npm start"
   },
   "dependencies": {
-    "@fixpics/common": "0.1.0",
+    "@base-project/common": "0.1.0",
     "@nest/core": "^4.5.4",
     "@nestjs-modules/mailer": "^1.5.1",
     "@nestjs/common": "^7.0.0",

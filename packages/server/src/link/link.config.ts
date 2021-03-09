@@ -1,5 +1,5 @@
 import { ACTIONS } from "../@config/actions.config";
-import { ONE_HOUR, TEN_MINUTES } from "@fixpics/common";
+import { ONE_HOUR, TEN_MINUTES } from "@base-project/common";
 
 export const UNIQUE_LINK_ACTIONS = [
   ACTIONS.EMAIL_VERIFY_EMAIL,

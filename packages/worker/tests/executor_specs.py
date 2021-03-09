@@ -7,7 +7,7 @@ import utils
 from config import config
 from executor import Executor
 
-source = 'test-fixpics.mp4'
+source = 'test-base-project.mp4'
 widget = "logo"
 token = '60310fef5667a8d94ce284c8'
 source_dir = "__storage__/registered/60310fef5667a8d94ce284c8/src"
@@ -25,7 +25,7 @@ class TestProbeSource(TestExecutor):
 
     def test_write_nfo(self):
         self.executor.probe_source(source, source_dir)
-        expected = utils.read_json(join(source_dir, "test-fixpics.json"))
+        expected = utils.read_json(join(source_dir, "test-base-project.json"))
         self.assertIsInstance(expected['streams'], list)
 
 
@@ -33,7 +33,7 @@ class TestThumbnail(TestExecutor):
 
     def test_thumbnail(self):
         self.executor.thumbnail(source_dir, source)
-        self.assertTrue(exists(join(source_dir, "test-fixpics.png")))
+        self.assertTrue(exists(join(source_dir, "test-base-project.png")))
 
 
 class TestProbeWidget(TestExecutor):

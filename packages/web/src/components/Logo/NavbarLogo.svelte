@@ -1,6 +1,6 @@
 <script>
     import LogoImg from './LogoImg.svelte'
-    const appName = 'FIXPICS'
+    const appName = 'base-project'
 </script>
 
 <div class="flex">

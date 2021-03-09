@@ -4,7 +4,7 @@ import { User } from "./user.entity";
 import { ERR_DUPLICATE_ENTRY } from "../@constants";
 import { CreateUserDto } from "./@types/create-user.dto";
 import { PartialUserDto } from "./@types/partial-user.dto";
-import { uuid } from "@fixpics/common";
+import { uuid } from "@base-project/common";
 import { AuthDto } from "../auth/@types/auth.dto";
 
 @EntityRepository(User)

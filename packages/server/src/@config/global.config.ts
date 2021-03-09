@@ -1,6 +1,6 @@
 // global config settings
 import {join} from "path"
-import {readJson} from "@fixpics/common";
+import {readJson} from "@base-project/common";
 
 const GLOBAL_CONFIG_DIR = '__config__'
 const REQUIRED_CONFIGS = [

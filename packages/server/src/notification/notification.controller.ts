@@ -9,7 +9,7 @@ import { Role } from "../auth/@decorators/roles.decorator";
 import { RestrictId, RestrictWhere } from "../@types/restrict-to.type";
 import { UserService } from "../user/user.service";
 import { httpData, httpSuccess } from "../@helpers";
-import { omit } from "@fixpics/common"
+import { omit } from "@base-project/common"
 import { CreateNotification, PartialNotification } from "./@types/notification.types";
 import { User } from "../user/user.entity";
 import { GetUser } from "../user/@decorators/get-user.decorator";

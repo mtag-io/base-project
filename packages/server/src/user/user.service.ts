@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { UserRepository } from "./user.repository";
 import { dbSuccess } from "../@helpers";
-import { omit } from "@fixpics/common"
+import { omit } from "@base-project/common"
 import { ACTIVATE } from "../@constants";
 import { ROLES } from "../auth/auth.config";
 import { CreateUserDto } from "./@types/create-user.dto";

@@ -1,5 +1,4 @@
 import {HandlebarsAdapter} from "@nestjs-modules/mailer/dist/adapters/handlebars.adapter";
-import {ConfigService} from "@nestjs/config";
 import {
     EMAIL_VERIFY_EMAIL_TEMPLATE,
     REGISTRATION_EMAIL_TEMPLATE,
@@ -12,15 +11,13 @@ import {ACTIONS} from '../@config/actions.config'
 import {ADMIN_CONTACT} from "../@config/server.config";
 import {AUTH_DAEMON_CONTACT} from '../auth/auth.config'
 import {EMAIL, PAGE} from "../@constants";
-import { isProd } from "@fixpics/common"
+import { isProd } from "@base-project/common"
 
-//export const NOTIFICATION_OBSOLETE_TIME = ONE_MONTH
-
-export const notificationConfig = (configService: ConfigService) => {
+export const notificationConfig = () => {
     return {
         transport: isProd()
-            ? configService.get("SMTP_URL_PROD")
-            : configService.get("SMTP_URL_DEV"),
+            ? process.env["SMTP_URL_PROD"]
+            : process.env["SMTP_URL_DEV"],
             defaults: {
         from: ADMIN_CONTACT
     },

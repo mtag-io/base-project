@@ -6,9 +6,8 @@ import {AuthDto} from "./@types/auth.dto";
 import {HttpSuccess} from "../@types/http.types";
 import {JWT_PAYLOAD_FIELDS} from "./auth.config";
 import {createAccessUrl, dbSuccess, httpSuccess} from "../@helpers";
-import { uuid } from "@fixpics/common"
-import { pick } from "@fixpics/common"
-import {ConfigService} from "@nestjs/config";
+import {uuid} from "@base-project/common"
+import {pick} from "@base-project/common"
 import {ACTIONS} from "../@config/actions.config";
 import {AuthResponseDto} from "./@types/auth-response.dto";
 import {NotificationService} from "../notification/notification.service";
@@ -22,26 +21,34 @@ import {APP_OPEN_AUTH} from "./auth.config";
 
 @Injectable()
 export class AuthService {
+    private readonly _refreshSecret: string;
+    private readonly _jwtSecret: string;
+    private readonly _refreshExpiration: string;
+    private readonly _jwtExpiration: string
+
     constructor(
         private readonly userService: UserService,
         private readonly profileService: ProfileService,
         private readonly linkService: LinkService,
         private readonly jwtService: JwtService,
         private readonly notificationService: NotificationService,
-        private readonly configService: ConfigService
     ) {
+        this._refreshSecret = process.env["REFRESH_SECRET"]
+        this._jwtSecret = process.env["JWT_SECRET"]
+        this._refreshExpiration = process["JWT_EXPIRATION"]
+        this._jwtExpiration = process.env["JWT_EXPIRATION"]
     }
 
     async refreshHash(refreshToken) {
         return await bcrypt.hash(
             refreshToken,
-            this.configService.get("REFRESH_SECRET")
+            this._refreshSecret
         )
     }
 
     createAccessToken(user: User): string {
-        const secret = this.configService.get("JWT_SECRET")
-        const expiresIn = this.configService.get("JWT_EXPIRATION")
+        const secret = this._jwtSecret
+        const expiresIn = this._jwtExpiration
         return this.jwtService.sign(
             {...pick(user, JWT_PAYLOAD_FIELDS)},
             {secret, expiresIn}
@@ -51,7 +58,7 @@ export class AuthService {
     async createRefreshToken(): Promise<any> {
         const refreshToken = uuid(64)
         const refreshHash = this.refreshHash(refreshToken)
-        const refreshExp = Date.now() + this.configService.get("REFRESH_EXPIRATION")
+        const refreshExp = Date.now() + this._refreshExpiration
         return {
             refreshToken,
             refreshHash,
@@ -94,8 +101,8 @@ export class AuthService {
     async refreshToken(token: string): Promise<AuthResponseDto> {
         const refreshHash = await this.refreshHash(token)
         const user = await this.userService.getUser({refreshHash})
-        if(!user) throw new UnauthorizedException('Invalid access credentials')
-        if(!user.refreshExpired()) throw new ResourceExpiredException('Resource has expired')
+        if (!user) throw new UnauthorizedException('Invalid access credentials')
+        if (!user.refreshExpired()) throw new ResourceExpiredException('Resource has expired')
         return this.authResponse(user)
     }
 

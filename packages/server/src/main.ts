@@ -1,16 +1,17 @@
+import {config} from 'dotenv'
 import {NestFactory} from "@nestjs/core";
 import {AppModule} from "./app.module";
 import {ValidationPipe} from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
+
+config()
 
 async function bootstrap() {
 
     const app = await NestFactory.create(AppModule);
-
-    const configService =  app.get(ConfigService);
-    const httpConnection = configService.get('NODE_ENV') === 'DOCKER'
-        ? `0.0.0.0:${configService.get('SERVER_PORT')}`
-        : configService.get('SERVER_PORT')
+    
+    const httpConnection = process.env['NODE_ENV'] === 'DOCKER'
+        ? `0.0.0.0:${process.env['SERVER_PORT']}`
+        : process.env['SERVER_PORT']
 
     app.enableCors();
 

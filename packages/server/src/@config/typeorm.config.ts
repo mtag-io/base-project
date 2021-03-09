@@ -1,16 +1,13 @@
 import {TypeOrmModuleOptions} from "@nestjs/typeorm";
-import { isDev, isTest } from "@fixpics/common"
-import {ConfigService} from "@nestjs/config";
+import {isDev, isTest} from "@base-project/common"
 
-export const typeOrmConfig = (configService: ConfigService): TypeOrmModuleOptions => {
-    return {
-        type: "mysql",
-        url: `http://${configService.get('DB_USER')}:` +
-            `${configService.get('DB_PASSWORD')}@` +
-            `${configService.get('DB_HOST')}:` +
-            `${configService.get('DB_PORT')}`,
-        database: configService.get("DB"),
-        entities: [__dirname + "/../**/*.entity.{js,ts}"],
-        synchronize: isDev() || isTest(),
-    }
+export const typeOrmConfig: TypeOrmModuleOptions = {
+    type: "mysql",
+    url: `http://${process.env['DB_USER']}:` +
+        `${process.env['DB_PASSWORD']}@` +
+        `${process.env['DB_HOST']}:` +
+        `${process.env['DB_PORT']}`,
+    database: process.env["DB"],
+    entities: [__dirname + "/../**/*.entity.{js,ts}"],
+    synchronize: isDev() || isTest(),
 }

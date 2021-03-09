@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { NotificationRepository } from "./notification.repository";
 import { dbSuccess } from "../@helpers";
-import { isTest } from "@fixpics/common"
+import { isTest } from "@base-project/common"
 import { Notification } from "./notification.entity";
 import { MailerService } from "@nestjs-modules/mailer";
 import { CreateNotification, PartialNotification } from "./@types/notification.types";

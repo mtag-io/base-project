@@ -2,7 +2,7 @@ import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from "@nes
 import { Observable } from "rxjs";
 import { tap } from "rxjs/operators";
 import { USER_REJECTED_FIELDS } from "./auth.config";
-import { omit } from "@fixpics/common"
+import { omit } from "@base-project/common"
 import { PROFILE_REJECTED_FIELDS } from "../user/profile.config";
 import { AuthResponseDto } from "./@types/auth-response.dto";
 

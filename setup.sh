@@ -3,7 +3,7 @@
 # create link to env pool
 if [ ! -h .env ];
   then
-    ln -s ../../@env-pool/fixpics/.env .
+    ln -s ../../@env-pool/base-project/.env .
 fi
 
 # create a root links to the packages
@@ -41,7 +41,7 @@ cd ./packages/server || exit
 # env file from the env pool
 if [ ! -h .env ];
   then
-    ln -s ../../../../@env-pool/fixpics/.env .
+    ln -s ../../../../@env-pool/base-project/.env .
 fi
 
 if [ ! -h __config__ ];
@@ -95,7 +95,7 @@ cd ./worker || exit
 # env file from the env pool
 if [ ! -h .env ];
   then
-    ln -s ../../../../@env-pool/fixpics/.env .
+    ln -s ../../../../@env-pool/base-project/.env .
 fi
 
 if [ ! -h __config__ ];
