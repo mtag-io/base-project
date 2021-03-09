@@ -1,0 +1,1 @@
+export const SEQ_FILES_REGEXP = /[0-9]\./i

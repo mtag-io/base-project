@@ -5,6 +5,7 @@ import {typeOrmConfig} from "./@config/typeorm.config";
 import {AuthModule} from "./auth/auth.module";
 import {AccessLogger} from "./@middleware/access-logger.middleware";
 import {NotificationModule} from "./notification/notification.module";
+import {WorkerModule} from "./worker/worker.module";
 
 @Module({
 
@@ -12,7 +13,8 @@ import {NotificationModule} from "./notification/notification.module";
         TypeOrmModule.forRoot(typeOrmConfig),
         AuthModule,
         UserModule,
-        NotificationModule
+        NotificationModule,
+        WorkerModule
     ]
 })
 
