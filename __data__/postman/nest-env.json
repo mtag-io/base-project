@@ -1,0 +1,34 @@
+{
+	"id": "b7d28f1a-e84c-4b81-8af9-6703a49a3be1",
+	"name": "nest-server-api",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/",
+			"enabled": true
+		},
+		{
+			"key": "adminUser",
+			"value": "admin@test.com",
+			"enabled": true
+		},
+		{
+			"key": "adminPass",
+			"value": "secretPass51",
+			"enabled": true
+		},
+		{
+			"key": "token",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "dummyId",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2021-01-28T18:19:10.632Z",
+	"_postman_exported_using": "Postman/7.36.1"
+}

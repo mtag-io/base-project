@@ -1,0 +1,8 @@
+{
+  "appName": "fixpix",
+  "appDomain": "base-project.ro",
+  "description": "Video robot",
+  "authDaemon": "auth-daemon",
+  "webadmin": "admin",
+  "langs": ["en", "ro"]
+}

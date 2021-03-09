@@ -1,0 +1,5 @@
+export const CONFIRM = 'CONFIRM'
+export const POST = 'POST'
+export const GET = 'GET'
+export const ANONYMOUS = 'ANONYMOUS'
+export const REGISTERED = 'registered'

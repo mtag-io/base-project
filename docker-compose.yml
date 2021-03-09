@@ -1,0 +1,71 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      - MYSQL_PORT=${DB_PORT}
+      - MYSQL_HOST=${DB_HOST}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - DB=${DB}
+    networks:
+      - local-bridge
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - ./__data__/db:/var/lib/mysql
+      - ./__data__/dump:/docker-entrypoint-initdb.d
+
+  worker:
+    image: worker:latest
+    container_name: worker
+    environment:
+      - WORKER_ENV=DOCKER
+    networks:
+      - local-bridge
+    ports:
+      - "4848:4848"
+    volumes:
+      - ../__common__/__config__:/home/python3/__config__
+      - ../__common__/__storage__:/home/python3/__storage__
+      - ../__common__/__resources__:/home/python3/__resources__
+
+  server:
+    image: server:latest
+    container_name: server
+    environment:
+      - NODE_ENV=DOCKER
+    networks:
+      - local-bridge
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    depends_on:
+      - db
+    volumes:
+      - ../__common__/__config__:/home/node/__config__
+      - ../__common__/__resources__:/home/node/__resources__
+      - ../__common__/__storage__:/home/node/__storage__
+    command: [ "node", "/home/node/dist/main.js" ]
+
+  web:
+    image: nginx
+    container_name: web
+    environment:
+      - NODE_ENV=DOCKER
+    networks:
+      - local-bridge
+    ports:
+      - 8080:80
+    volumes:
+      - ../__common__/__public__:/usr/share/nginx/html
+
+networks:
+  local-bridge:
+    driver: bridge
+    external: false
+    name: local-bridge
+
+
