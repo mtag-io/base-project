@@ -6,5 +6,25 @@
   "workspaces": [
     "packages/*"
   ],
-  "license": "UNLICENCED"
+  "license": "UNLICENCED",
+  "config": {
+    "files": {
+      "global": "global.json",
+      "actions": "actions.json",
+      "endpoints": "endpoints.json",
+      "auth": "auth.json",
+      "theme": "theme.json"
+    },
+    "dirs": {
+      "config": "__config__",
+      "resources": "--resources__",
+      "storage": "__storage__",
+      "public": "--public__",
+      "data": "__data__"
+    },
+    "webPackages": [
+      "packages/web"
+    ],
+    "scssThemeFile": "theme/_material-theme.scss"
+  }
 }

@@ -1,8 +1,31 @@
 const {expect} = require('chai')
 const {sizes, imgSizes} = require('../constants/units')
-const {imgSize, h, m, mb, ml, mr, mt, mx, my, p, pb, pl, pr, pt, px, py, w} = require('../tailwind/sizes')
+const {imgSize, h, m, mb, ml, mr, mt, mx, my, p, pb, pl, pr, pt, px, py, w, roundSize} = require('../front/sizes')
 
 describe('units', () => {
+
+    describe('roundSizes', () => {
+
+        const limits = [50, 100, 150, 200, 300, 400, 500, 600]
+
+        it('should pass fro s < limits[0]', () => {
+            expect(roundSize(42, limits)).to.equal("50")
+        })
+
+        it('should pass for in-between value', () => {
+            expect(roundSize(244, limits)).to.equal("300")
+        })
+
+        it('should pass return null string', () => {
+            expect(roundSize(244, [])).to.equal("")
+        })
+
+        it('should pass return last limit', () => {
+            expect(roundSize(760, limits)).to.equal("600")
+        })
+    })
+
+
     describe('sizes', () => {
 
         it('should return the right size', () => {

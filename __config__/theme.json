@@ -1,17 +1,6 @@
 {
     "colors": {
-        "primary": {
-            "default": "#ff6666",
-            "dark": "#d00000"
-        },
-        "secondary": {
-            "default": "#002A69",
-            "light": "#0044b0"
-        },
-        "ink": {
-            "default": "#333333",
-            "light": "#eeeeee",
-            "dark": "#333333"
-        }
+        "primary-color": "#ff6666",
+        "secondary-color": "#002A69"
     }
 }
