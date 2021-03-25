@@ -3,12 +3,13 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/packages/common/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/packages/server/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/packages/commloc/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/app-server/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/back-common/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/front-common/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/server/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/app-server/dist" />
       <excludeFolder url="file://$MODULE_DIR$/@server/dist" />
       <excludeFolder url="file://$MODULE_DIR$/@server/@common" />
       <excludeFolder url="file://$MODULE_DIR$/@server" />
@@ -17,34 +18,36 @@
       <excludeFolder url="file://$MODULE_DIR$/__storage__" />
       <excludeFolder url="file://$MODULE_DIR$/__config__" />
       <excludeFolder url="file://$MODULE_DIR$/__public__" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/server/__resources__" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/server/__storage__" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/app-server/__resources__" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/app-server/__storage__" />
       <excludeFolder url="file://$MODULE_DIR$/@web" />
       <excludeFolder url="file://$MODULE_DIR$/@worker" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/web/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-app/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/packages/worker/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/@common" />
       <excludeFolder url="file://$MODULE_DIR$/@web/@common" />
       <excludeFolder url="file://$MODULE_DIR$/__components__" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/web/_COMPONENTS_POOL_" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/server/@common" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/server/__config__" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/server/.idea" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/web/__config__" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/web/__public__" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/web/__resources__" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/web/__storage__" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/web/build" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/commloc/front-build" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/commloc/back-build" />
-      <excludeFolder url="file://$MODULE_DIR$/packages/commloc/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-app/_COMPONENTS_POOL_" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/app-server/@common" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/app-server/__config__" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/app-server/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-app/__config__" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-app/__public__" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-app/__resources__" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-app/__storage__" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/common/front-build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/common/back-build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/common/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-static/public" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-static" />
     </content>
     <content url="file://$MODULE_DIR$/@web/@common" />
-    <content url="file://$MODULE_DIR$/packages/web/src/components" />
-    <content url="file://$MODULE_DIR$/packages/web/src/lib" />
-    <content url="file://$MODULE_DIR$/packages/web/src/routing" />
-    <content url="file://$MODULE_DIR$/packages/web/src/stores" />
-    <content url="file://$MODULE_DIR$/packages/web/src/views" />
+    <content url="file://$MODULE_DIR$/packages/web-app/src/components" />
+    <content url="file://$MODULE_DIR$/packages/web-app/src/lib" />
+    <content url="file://$MODULE_DIR$/packages/web-app/src/routing" />
+    <content url="file://$MODULE_DIR$/packages/web-app/src/stores" />
+    <content url="file://$MODULE_DIR$/packages/web-app/src/views" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="@types/chai" level="application" />

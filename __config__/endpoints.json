@@ -26,10 +26,5 @@
   "link": {
     "_base":"/link",
     "verify": "/verify"
-  },
-  "worker": {
-    "_base": "worker",
-    "source": "/source",
-    "widget": "/widget"
   }
 }

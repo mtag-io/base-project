@@ -35,7 +35,7 @@ services:
 
   server:
     image: server:latest
-    container_name: server
+    container_name: app-server
     environment:
       - NODE_ENV=DOCKER
     networks:
@@ -52,7 +52,7 @@ services:
 
   web:
     image: nginx
-    container_name: web
+    container_name: web-app
     environment:
       - NODE_ENV=DOCKER
     networks:

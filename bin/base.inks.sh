@@ -6,7 +6,7 @@ ROOT="$(dirname "../" "$0")"
 UPPER=$(cd ../../../ && pwd)
 
 # ************ LINK ENV FILE *************
-# create link to env pool in root and server
+# create link to env pool in root and app-server
 if [ -n "$1" ];
   then
     ENV="../../@env-pool"
@@ -42,14 +42,14 @@ if [ ! -h "$ROOT"/@web ];
 fi
 
 # ************ LINK STORAGE IN PUBLIC *************
-# create a storage link in the public server dir
+# create a storage link in the public app-server dir
 if [ ! -h "$ROOT"/__public__/__storage__ ];
   then
     ln -s  "$ROOT"/__storage__ "$ROOT"/__public__/__storage__
 fi
 
 # ************ LINK IN SERVER *************
-# create links in the server package
+# create links in the app-server package
 
 if [ ! -h "$ROOT"/packages/server/__config__ ];
   then
@@ -72,7 +72,7 @@ if [ ! -h "$ROOT"/packages/server/@common ];
 fi
 
 # ************ LINK IN WEB *************
-# create links in the web package
+# create links in the web-app package
 
 if [ ! -h "$ROOT"/packages/web/__config__ ];
   then

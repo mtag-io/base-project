@@ -1,0 +1,25 @@
+{
+  "name": "back-common",
+  "version": "0.1.0",
+  "description": "Common backend helpers",
+  "author": "Vlad Blindu",
+  "license": "UNLICENCED",
+  "private": false,
+  "main": "build/index.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "chai": "^4.3.3",
+    "esm": "^3.2.25",
+    "mocha": "^8.3.1",
+    "mock-local-storage": "^1.1.17",
+    "nanoid": "^3.1.22",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "15.1.0",
+    "@rollup/plugin-node-resolve": "9.0.0",
+    "rollup": "2.28.1"
+  }
+}
