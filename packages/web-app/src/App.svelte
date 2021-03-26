@@ -5,14 +5,6 @@
 
     export let url = ''
 
-    console.log(routes.map(
-        r => {
-            console.log(r)
-            console.log('path: ', r.path)
-            console.log('component: ', r.component)
-            console.log('isError: ', r.isError, '\n')
-        }
-    ))
 </script>
 
 <style lang="scss" global>

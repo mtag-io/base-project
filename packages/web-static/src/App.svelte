@@ -1,27 +1,38 @@
-<!-- App.svelte -->
 <script>
-  import { Router, Route } from "svelte-routing";
+    import {Route, Router} from 'svelte-routing'
+    import Layout from './views/layout/Layout.svelte'
+    import {routes} from './routes'
 
-  // Admin Layout
-  import Admin from "./layouts/Admin.svelte";
-  // Auth Layout
-  import Auth from "./layouts/Auth.svelte";
-
-  // No Layout Pages
-  import Index from "./views/Index.svelte";
-  import Landing from "./views/Landing.svelte";
-  import Profile from "./views/Profile.svelte";
-
-  export let url = "";
+    export let url = "";
 </script>
 
+<style lang="scss" global>
+
+  .min-slim {
+    min-width: 400px;
+    overflow: scroll;
+  }
+
+  body {
+    @extend .min-slim;
+  }
+</style>
+
+
 <Router url="{url}">
-  <!-- admin layout -->
-  <Route path="admin/*admin" component="{Admin}" />
-  <!-- auth layout -->
-  <Route path="auth/*auth" component="{Auth}" />
-  <!-- no layout pages -->
-  <Route path="landing" component="{Landing}" />
-  <Route path="profile" component="{Profile}" />
-  <Route path="/" component="{Index}" />
+    <Layout>
+        {#each routes as route}
+            <Route path="{route.path}">
+                {#if route.isError}
+                    <svelte:component this="{route.component}" error="{route.isError}"/>
+                {:else}
+                    <svelte:component this="{route.component}"/>
+                {/if}
+            </Route>
+        {/each}
+    </Layout>
 </Router>
+
+
+
+

@@ -1,0 +1,17 @@
+{
+  "default": {
+    "serviceRoutes": {
+      "E404": "/error404",
+      "E403": "/error403",
+      "E400": "/error400",
+      "E500": "/error500",
+      "PASSWORD_RESET": "/password-reset",
+      "SIGN_OUT": "/sign-out",
+      "CONTACT": "/contact"
+    },
+    "HOME": "/",
+    "ABOUT": "/about"
+  },
+  "web-app": {},
+  "web-static": {}
+}
