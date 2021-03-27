@@ -3,7 +3,7 @@
     import {mdiEye, mdiEyeOff} from '@mdi/js'
 
     import DialogTitle from '../dialog/DialogTitle.svelte'
-    import AppLogo from '../Logo/AppLogo.svelte'
+    import AppLogo from '../../../../common/components/logo/AppLogo.svelte'
     import {socialLogins} from './social'
     import {signinSchema, signupSchema} from './login.schema'
     import {socialProviders} from 'config/auth.json'

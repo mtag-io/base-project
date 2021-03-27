@@ -1,15 +1,16 @@
 <script>
-    import AuthNavbar from 'components/Navbars/AuthNavbar.svelte'
-    import Footer from 'components/Footers/Footer.svelte'
-    import PageContainer from './Page.container.svelte'
+    import {MaterialApp} from 'svelte-materialify/src'
+    import Footer from 'ext-comp/footer/Footer.svelte'
+    import Page from './Page.svelte'
+    import Header from './Header.svelte'
 
     const params = {}
 </script>
 
-<div class="app">
-    <AuthNavbar/>
-    <PageContainer>
+<MaterialApp>
+    <Header/>
+    <Page>
         <slot/>
-    </PageContainer>
+    </Page>
     <Footer/>
-</div>
+</MaterialApp>

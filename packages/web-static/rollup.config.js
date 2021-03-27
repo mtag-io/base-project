@@ -19,7 +19,8 @@ const aliases = alias({
         {find: 'components', replacement: 'src/components'},
         {find: 'views', replacement: 'src/views'},
         {find: 'assets', replacement: 'src/assets'},
-        {find: 'config', replacement: '__config__'}
+        {find: 'config', replacement: '__config__'},
+        {find: 'ext-comp', replacement:'../common/components'}
     ]
 })
 

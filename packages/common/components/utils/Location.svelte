@@ -2,7 +2,8 @@
     import {onDestroy, onMount} from 'svelte'
     import {MaterialApp} from 'svelte-materialify/src'
     import {globalHistory} from 'svelte-routing/src/history'
-    import {currentPath} from '../../stores/index'
+
+    export let currentPath = '/'
 
     let unsub
 

@@ -12,8 +12,8 @@
 
 <div>
     <main>
-        <Link to="/about">About</Link>
         <div class="leading-relaxed pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
+            <h1>Home</h1>
 <!--            <img alt="background_img" src="https://i.imgur.com/L36ykgw.jpg"-->
 <!--                 class="absolute top-0 w-full h-full bg-center bg-cover"-->
 <!--            />-->
@@ -45,19 +45,19 @@
 <!--                    <div class="w-full lg:w-4/12 px-4 ml-auto mr-auto text-center"></div>-->
 <!--                </div>-->
 <!--            </div>-->
-        </div>
+<!--        </div>-->
 
 <!--        <Banner/>-->
 
-        <section class="pb-20 bg-black ">
-            <div class="container mx-auto ">
-                <div class="flex flex-wrap items-center mt-32">
-                    <div class="w-full px-4 mr-auto ml-auto">
-                        <VideoPlayer width="560" height="360" {poster} {source}/>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!--        <section class="pb-20 bg-black ">-->
+<!--            <div class="container mx-auto ">-->
+<!--                <div class="flex flex-wrap items-center mt-32">-->
+<!--                    <div class="w-full px-4 mr-auto ml-auto">-->
+<!--                        <VideoPlayer width="560" height="360" {poster} {source}/>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
 
 <!--        <section class="relative py-20">-->
 <!--            <div class="container mx-auto px-4">-->
