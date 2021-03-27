@@ -1,5 +1,5 @@
 const {expect} = require('chai')
-const {createInitials} = require('../front/create-initials')
+const {createInitials} = require('../create-initials')
 
 describe('sizes', () => {
 

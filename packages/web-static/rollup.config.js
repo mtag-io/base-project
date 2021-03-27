@@ -1,9 +1,8 @@
-import * as path from 'path'
 import svelte from 'rollup-plugin-svelte'
 import resolve from '@rollup/plugin-node-resolve'
+import * as path from 'path'
 import commonjs from '@rollup/plugin-commonjs'
 import livereload from 'rollup-plugin-livereload'
-import css from 'rollup-plugin-css-only'
 import dev from 'rollup-plugin-dev'
 import {terser} from 'rollup-plugin-terser'
 import alias from '@rollup/plugin-alias'
@@ -43,13 +42,16 @@ export default {
 
         svelte({
             preprocess,
-            emitCss: false
+            emitCss: false,
+            css: (css) => {
+                css.write('bundle.css')
+            }
         }),
-        css({ output: 'bundle.css' }),
+
         !production && dev({
             dirs: ['dist', PUBLIC],
-            port: 8081,
             historyApiFallback: true,
+            port: 8081,
             proxy: {
                 '/source': 'http://localhost:4649/source',
                 '/auth/*': 'http://localhost:4649/auth',

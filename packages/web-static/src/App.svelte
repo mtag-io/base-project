@@ -1,9 +1,9 @@
 <script>
     import {Route, Router} from 'svelte-routing'
-    import Layout from './views/layout/Layout.svelte'
     import {routes} from './routes'
+    import Location from '../../web-app/src/views/layouts/Location.svelte'
 
-    export let url = "";
+    export let url = ''
 </script>
 
 <style lang="scss" global>
@@ -20,7 +20,8 @@
 
 
 <Router url="{url}">
-    <Layout>
+    <Location>
+        <!--    <Layout>-->
         {#each routes as route}
             <Route path="{route.path}">
                 {#if route.isError}
@@ -30,7 +31,8 @@
                 {/if}
             </Route>
         {/each}
-    </Layout>
+    </Location>
+    <!--    </Layout>-->
 </Router>
 
 

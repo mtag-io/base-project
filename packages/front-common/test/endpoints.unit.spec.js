@@ -1,5 +1,5 @@
 const {expect} = require('chai')
-const {baseEndpoints, flatten, controllerEndpoints, accessEndpoints} = require('../front/endpoints')
+const {baseEndpoints, flatten, controllerEndpoints, accessEndpoints} = require('../../common/endpoints.helpers')
 const endpoints = require('./__fixtures__/endpoints.json')
 
 describe('baseEndpoints', () => {

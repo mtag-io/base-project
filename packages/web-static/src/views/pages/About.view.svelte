@@ -1,4 +1,9 @@
+<script>
+    import {Link} from 'svelte-routing'
+</script>
+
 <div class='row mt-xl'>
+    <Link to="/">Home</Link>
     <div class='col mb-lg'>
         <p class='font-bold text-orange-700 text-2xl mb-sm'>WHAT ARE WE DOING?</p>
         <p class='font-bold text-md text-justify'>Red Cat Studios provides a full range of language services including translation, audio and video

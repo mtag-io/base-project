@@ -1,5 +1,5 @@
 const {expect} = require('chai')
-const {findRoute} = require('../front/routes')
+const {findRoute} = require('../routes')
 
 const testRoutes = {
     HOME: {
