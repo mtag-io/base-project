@@ -22,6 +22,7 @@
 
   body {
     @extend .min-slim;
+    scroll-behavior: smooth;
   }
 </style>
 

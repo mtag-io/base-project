@@ -1,0 +1,30 @@
+{
+  "auth": {
+    "_base": "/auth",
+    "signin": "signin",
+    "signup": "signup",
+    "refresh": "refresh",
+    "verify-email": {
+      "_base": "/verify-email",
+      "request": "/request",
+      "access": "/access"
+    },
+    "password-reset": {
+      "_base": "/password-reset",
+      "request": "/request",
+      "access": "/access"
+    },
+    "activate": "/activate",
+    "deactivate": "/deactivate"
+  },
+  "user": "/user",
+  "profile": "/profile",
+  "notification": {
+    "_base": "/notification",
+    "mark-read": "/mark-read"
+  },
+  "link": {
+    "_base":"/link",
+    "verify": "/verify"
+  }
+}

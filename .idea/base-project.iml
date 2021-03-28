@@ -40,6 +40,12 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/common/build" />
       <excludeFolder url="file://$MODULE_DIR$/packages/web-static/public" />
       <excludeFolder url="file://$MODULE_DIR$/__public__" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-static/src/components/__safe-old-comps" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-static-spa/src/assets" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-static/__public__/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-static/__public__/assets" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-static-spa/src/components/__safe-old-comps" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/common/components/player" />
     </content>
     <content url="file://$MODULE_DIR$/@web/@common" />
     <content url="file://$MODULE_DIR$/packages/web-app/src/components" />

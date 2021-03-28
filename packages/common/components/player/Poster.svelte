@@ -1,3 +1,4 @@
+<!--suppress HtmlDeprecatedAttribute -->
 <script>
   export let src;
 </script>

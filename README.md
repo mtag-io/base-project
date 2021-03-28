@@ -1,7 +1,7 @@
 # base-project
 ## monorepo
 
-![logo](__resources__/img/logo200.png)
+![logo](__resources__/bitmap/logo&id/logo200.png)
 
 ### Components
 - [@server](https://github.com/vladblindu/base-project/tree/master/packages/server)   - NestJs - typescript custom backend

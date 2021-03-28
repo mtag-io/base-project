@@ -18,4 +18,6 @@
 
 <div
   class="bar"
-  style="background-color:{color}; border-color:{color}; opacity:{opacity}; transform: scaleX({value});" />
+  style="background-color:{color}; border-color:{color}; opacity:{opacity}; transform: scaleX({value});">
+
+</div>
