@@ -1,6 +1,6 @@
 <script>
-    import Title from "./Title.svelte";
-    import TBody from "./TBody.svelte";
+    import Title from "../Title.svelte";
+    import TBody from "../TBody.svelte";
 
     export let title
     export let body
@@ -11,5 +11,6 @@
     <TBody>{body}</TBody>
     <slot name="gallery"/>
     <slot name="testimonials"/>
+    <slot/>
 </div>
 

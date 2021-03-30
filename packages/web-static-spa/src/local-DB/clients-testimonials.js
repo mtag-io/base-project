@@ -19,7 +19,7 @@ export const TestimonialsCLDB = {
                 ' Thanks again! I’m hoping to have files ready for you a little earlier for our next month\'s\n' +
                 ' topic...\n' +
                 ' Cheers."',
-            author: 'Kyle Morton, Senior Editor Multimedia Training Systems, Inc. - USA More testimonials...'
+            author: 'Kyle Morton, Senior Editor Multimedia Training Systems, Inc. - USA'
         }
     ]
 }

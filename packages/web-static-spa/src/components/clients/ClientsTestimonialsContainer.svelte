@@ -1,5 +1,5 @@
 <script>
-    import Title from "./Title.svelte";
+    import Title from "../Title.svelte";
     export let title
 </script>
 
