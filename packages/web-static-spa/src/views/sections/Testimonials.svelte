@@ -2,13 +2,13 @@
     import TestimonialsContainer from "../../components/testimonials/TestimonialsContainer.svelte";
 
     import {testimonialsDB} from "../../local-DB/testimonials";
-    import Testimonials from "../../components/testimonials/Testimonials.svelte";
+    import TestimonialsComponent from "../../components/testimonials/TestimonialsComponent.svelte";
 
 </script>
 
 
 <TestimonialsContainer title={testimonialsDB.title} body={testimonialsDB.body} address={testimonialsDB.address}>
     <div slot="testimonials">
-      <Testimonials items={testimonialsDB.items}/>
+      <TestimonialsComponent items={testimonialsDB.items}/>
     </div>
 </TestimonialsContainer>

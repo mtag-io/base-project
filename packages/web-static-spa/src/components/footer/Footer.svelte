@@ -1,112 +1,70 @@
 <script>
-    // make dynamic date to be added to footer
-    let date = new Date().getFullYear();
+    import {Footer, Icon, Divider} from 'svelte-materialify/src';
+
+    import {mdiFacebook} from '@mdi/js';
+    import { mdiTwitter } from '@mdi/js';
+    import { mdiInstagram } from '@mdi/js';
+    import { mdiLinkedin } from '@mdi/js';
+    import { mdiYoutube } from '@mdi/js';
+
 </script>
 
-<footer class="relative bg-blueGray-200 pt-8 pb-6">
-    <div
-            class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
-            style="transform: translateZ(0);"
-    >
-        <svg
-                class="absolute bottom-0 overflow-hidden"
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-                viewBox="0 0 2560 100"
-                x="0"
-                y="0"
-        >
-            <polygon
-                    class="text-blueGray-200 fill-current"
-                    points="2560 0 2560 100 0 100"
-            ></polygon>
-        </svg>
-    </div>
-    <div class="container mx-auto px-4">
-        <div class="flex flex-wrap text-center lg:text-left">
-            <div class="w-full lg:w-4/12 px-4">
-                <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
-                <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
-                    Find us on any of these platforms
-                </h5>
-                <div class="mt-6 lg:mb-0 mb-6">
-                    <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                            type="button">
-                        <i class="fab fa-twitter"></i>
-                    </button>
-                    <button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                            type="button">
-                        <i class="fab fa-facebook-square"></i>
-                    </button>
-                    <button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                            type="button">
-                        <i class="fab fa-dribbble"></i>
-                    </button>
-                    <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                            type="button">
-                        <i class="fab fa-github"></i>
-                    </button>
-                </div>
-            </div>
+<Footer padless class="dark theme--dark justify-center flex-column ">
+    <div class="container mb-3">
+        <div>
+            <h4>Let's keep in touch!</h4>
+            <h5>Find us on any of these platforms</h5>
+            <div class="container">
+                <a class="primary-text d-flex" href="https://www.facebook.com/RedCatStudiosUK/" target="_blank">
+                    <Icon path={mdiFacebook}/>
+                </a>
+                <a class="primary-text d-flex" href="https://twitter.com/RedCatStudiosUK" target="_blank">
+                    <Icon path={mdiTwitter}/>
+                </a>
+                <a class="primary-text d-flex" href="https://www.instagram.com/red.cat.studios/" target="_blank">
+                    <Icon path={mdiInstagram}/>
+                </a>
+                <a class="primary-text d-flex" href="https://www.linkedin.com/showcase/red-cat-studios/" target="_blank">
+                    <Icon path={mdiLinkedin}/>
+                </a>
+                <a class="primary-text d-flex" href="https://www.youtube.com/channel/UCdLyRwbRdwCTzo7lAb2dnFA" target="_blank">
+                    <Icon path={mdiYoutube}/>
+                </a>
 
-            <div class="w-full lg:w-6/12 px-4">
-                <div class="flex flex-wrap items-top mb-6">
-                    <div class="w-full lg:w-6/12 px-4 ml-auto">
-                        <ul class="list-unstyled">
-                            <li class="text-sm">
-                                32 Queens Terrace, Southampton, SO14 3BQ, United Kingdom
-                            </li>
-                            <li class="text-sm">
-                                Phone: +44 (0)2380 333 360
-                            </li>
-                            <li class="text-sm">
-                                E-mail: Contact@RedCatStudios.uk
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="w-full lg:w-4/12 px-4">
-                        <ul class="list-unstyled">
-                            <li>
-                                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="https://github.com/creativetimofficial/notus-svelte/blob/main/LICENSE.md?ref=ns-footer">
-                                    Terms of Business
-                                </a>
-                            </li>
-                            <li>
-                                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="https://creative-tim.com/terms?ref=ns-footer">
-                                    Privacy Policy
-                                </a>
-                            </li>
-                            <li>
-                                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="https://creative-tim.com/privacy?ref=ns-footer">
-                                    Contact
-                                </a>
-                            </li>
-                            <li>
-                                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="https://creative-tim.com/contact-us?ref=ns-footer">
-                                    Booking Process
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <hr class="my-6 border-blueGray-300"/>
-        <div class="flex flex-wrap items-center md:justify-between justify-center">
-            <div class="w-full px-4 mx-auto text-center">
-                <div class="text-sm text-blueGray-500 font-semibold py-1">
-                    Company Registered in England & Wales No. 05434667 | VAT Reg. No. GB860906417 | D-U-N-S® Number:
-                    34-628-3901
-                    <br/>
-                    <span>   © 2005-2021, Red Cat Studios Ltd. All rights reserved.</span>
-                </div>
-            </div>
+        <div class="container-address">
+            <p class="p-address">  32 Queens Terrace, Southampton, SO14 3BQ, United Kingdom</p>
+            <p class="p-address">  Phone: +44 (0)2380 333 360</p>
+            <p class="p-address">   E-mail: Contact@RedCatStudios.uk</p>
         </div>
     </div>
-</footer>
+    <div class="container-rights grey darken-1 pa-2 text-center" style="width:100%">
+        Company Registered in England & Wales No. 05434667 | VAT Reg. No. GB860906417 | D-U-N-S® Number:
+        34-628-3901
+        <br/>
+        <span> © 2005-2021, Red Cat Studios Ltd. All rights reserved.</span>
+    </div>
+</Footer>
+
+
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+    .container-address{
+        display: block;
+        justify-content: center;
+        margin-left: 25px;
+        font-size: 12px;
+
+    }
+    .p-address{
+        margin: 2px;
+    }
+    .container-rights{
+        font-size: 8px;
+    }
+</style>

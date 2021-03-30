@@ -19,9 +19,10 @@
     const homeAnchors = [
         'home',
         'about',
-        'contact',
         'clients',
-        'catalogue'
+        'catalogue',
+        'booking process',
+        'contact',
     ]
 </script>
 

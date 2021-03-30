@@ -1,7 +1,5 @@
 <script>
-    import {
-        Card, CardTitle, CardSubtitle, CardText, Row, Col
-    } from 'svelte-materialify/src';
+    import {Card, CardTitle, CardSubtitle, CardText, Row, Col} from 'svelte-materialify/src';
 
     export let items
 </script>
