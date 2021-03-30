@@ -23,7 +23,7 @@
 
 
 <Layout>
-        <Main/>
+    <Main/>
 </Layout>
 
 

@@ -1,5 +1,6 @@
-import {omit} from './build'
+
 import {componentCase} from '../common/strings.helpers'
+import {omit} from "../common/obj.helpers";
 
 export const findRoute = (r, routes) => {
     if(r[0] !== '/') r = '/' + r

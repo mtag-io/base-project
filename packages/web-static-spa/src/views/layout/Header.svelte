@@ -21,7 +21,7 @@
         'about',
         'contact',
         'clients',
-        'whatever'
+        'catalogue'
     ]
 </script>
 
