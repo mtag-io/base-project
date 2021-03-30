@@ -1,6 +1,6 @@
 const {expect} = require('chai')
 const {sizes, imgSizes} = require('../../common/units.const')
-const {imgSize, h, m, mb, ml, mr, mt, mx, my, p, pb, pl, pr, pt, px, py, w, roundSize} = require('../sizes')
+const {imgSize, h, m, mb, ml, mr, mt, mx, my, p, pb, pl, pr, pt, px, py, w, roundSize} = require('../../common/sizes.helpers')
 
 describe('units', () => {
 

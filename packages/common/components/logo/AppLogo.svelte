@@ -1,7 +1,7 @@
 <script>
     import {Avatar} from 'svelte-materialify/src'
     import {docRoot} from 'config/global.json'
-    import {roundSize} from 'front-common'
+    import {roundSize} from '../../sizes.helpers'
 
     const {logo, logoSizes} = docRoot
 

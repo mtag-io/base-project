@@ -2,7 +2,7 @@
   <configuration default="true" type="mocha-javascript-test-runner">
     <node-interpreter>project</node-interpreter>
     <node-options />
-    <working-directory>$PROJECT_DIR$/packages/commloc</working-directory>
+    <working-directory>$PROJECT_DIR$/bin/stasy/test</working-directory>
     <pass-parent-env>true</pass-parent-env>
     <ui>bdd</ui>
     <extra-mocha-options>--require esm</extra-mocha-options>

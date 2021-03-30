@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/app-server/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/packages/back-common/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/packages/front-common/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/bin/stasy/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
@@ -46,6 +47,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/web-static/__public__/assets" />
       <excludeFolder url="file://$MODULE_DIR$/packages/web-static-spa/src/components/__safe-old-comps" />
       <excludeFolder url="file://$MODULE_DIR$/packages/common/components/player" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-static" />
     </content>
     <content url="file://$MODULE_DIR$/@web/@common" />
     <content url="file://$MODULE_DIR$/packages/web-app/src/components" />
@@ -59,5 +61,6 @@
     <orderEntry type="library" name="@types/mocha" level="application" />
     <orderEntry type="library" name="@types/color" level="application" />
     <orderEntry type="library" name="@types/lodash" level="application" />
+    <orderEntry type="library" name="@types/express" level="application" />
   </component>
 </module>

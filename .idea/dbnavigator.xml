@@ -28,8 +28,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="bce4ddf8-870d-47b1-8c67-bb643434ec36">
-      <console name="docke-mysql" type="STANDARD" schema="" session="Main" />
-      <console name="local-docker-mysql" type="STANDARD" schema="" session="Main" />
+      <console name="local-docker-mysql" type="STANDARD" schema="" session="Main"><![CDATA[create database static_server;]]></console>
     </connection>
     <connection id="8d8523c0-4dac-49de-a7a5-ff49846958c1">
       <console name="root@localhost" type="STANDARD" schema="" session="Main" />

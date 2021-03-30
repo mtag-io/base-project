@@ -1,4 +1,4 @@
-import {imgSizes, sizes} from '../common/units.const'
+import {imgSizes, sizes} from './units.const'
 
 export const imgSize = s => imgSizes[s]
 

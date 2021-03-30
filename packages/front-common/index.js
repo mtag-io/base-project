@@ -10,7 +10,7 @@ export {createInitials} from './create-initials'
 
 // Constant utilities (sizes, time)
 export {ONE_HOUR, ONE_MONTH, A_DAY, A_WEEK, TEN_MINUTES} from '../common/time.const'
-export {imgSize, h, m, mb, ml, mr, mt, mx, my, p, pb, pl, pr, pt, px, py, w, roundSize} from './sizes'
+export {imgSize, h, m, mb, ml, mr, mt, mx, my, p, pb, pl, pr, pt, px, py, w, roundSize} from '../common/sizes.helpers'
 
 // Http constants
 export {BASE_HEADERS} from '../common/http.const'
