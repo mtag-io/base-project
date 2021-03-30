@@ -1,11 +1,14 @@
 <script>
-    import ClientsContainer from "../../components/ClientsContainer.svelte";
-    import ClientsGallery from "../../components/ClientsGallery.svelte";
-    import ClientsTestimonials from "../../components/ClientsTestimonials.svelte";
+    import ClientsContainer from "../../components/clients/ClientsContainer.svelte";
+    import ClientsGallery from "../../components/clients/ClientsGallery.svelte";
+    import ClientsTestimonials from "../../components/clients/ClientsTestimonials.svelte";
 
     import {clientsDB} from "../../local-DB/clients";
     import {TestimonialsCLDB} from "../../local-DB/clients-testimonials";
-    import ClientsTestimonialsContainer from "../../components/ClientsTestimonialsContainer.svelte";
+
+    import ClientsTestimonialsContainer from "../../components/clients/ClientsTestimonialsContainer.svelte";
+    import Testimonials from "./Testimonials.svelte";
+
 </script>
 
 <ClientsContainer title={clientsDB.title} body={clientsDB.body}>
@@ -18,6 +21,7 @@
             <ClientsTestimonials items={TestimonialsCLDB.items}/>
         </ClientsTestimonialsContainer>
     </div>
+    <Testimonials/>
 </ClientsContainer>
 
 

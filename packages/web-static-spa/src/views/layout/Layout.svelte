@@ -1,8 +1,9 @@
 <script>
     import {MaterialApp} from 'svelte-materialify/src'
-    import Footer from 'ext-comp/footer/Footer.svelte'
+
     import Page from './Page.svelte'
     import Header from './Header.svelte'
+    import Footer from "../../components/footer/Footer.svelte";
 
     const params = {}
 </script>
