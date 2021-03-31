@@ -1,9 +1,6 @@
 <script context="module">
     const players = new Set()
 
-    export function stopAll() {
-        players.forEach(p => p.pause())
-    }
 </script>
 
 <script>
@@ -24,6 +21,6 @@
             bind:this={player}
             {src}
             controls>
-        <track kind="captions"/>
+        <track kind="captions" src={src}/>
     </audio>
 </div>
