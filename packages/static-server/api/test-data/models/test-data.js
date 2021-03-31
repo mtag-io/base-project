@@ -1,8 +1,20 @@
-'use strict';
+'use strict'
 
-/**
- * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#lifecycle-hooks)
- * to customize this model
- */
+const {basename} = require('path')
+const axios = require('axios')
 
-module.exports = {};
+const config = strapi.config['ssg']
+const stasyUrl = `http://${config.stasyHost}:${config.stasyPort}`
+const entity = basename(__filename.replace('.js', ''))
+
+module.exports = {
+  lifecycles: {
+    afterUpdate: async ({app}) => {
+      await axios.post(stasyUrl, {app: app.name, entity})
+        .catch(e => {
+            console.error(e.message)
+          }
+        )
+    }
+  }
+}

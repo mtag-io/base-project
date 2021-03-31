@@ -16,6 +16,9 @@
     },
     "anyNumber": {
       "type": "integer"
+    },
+    "app": {
+      "model": "app"
     }
   }
 }

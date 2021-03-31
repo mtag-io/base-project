@@ -1,6 +1,6 @@
 <script>
-    import Layout from 'views/layout/Layout.svelte'
-    import Main from 'views/layout/Main.svelte'
+    import Layout from './layout/Layout.svelte'
+    import {TestData} from './sections'
 </script>
 
 <style lang="scss" global>
@@ -23,7 +23,13 @@
 
 
 <Layout>
-    <Main/>
+    <div>Cucubau</div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <TestData/>
 </Layout>
 
 

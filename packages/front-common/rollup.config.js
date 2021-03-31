@@ -3,7 +3,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import replace from '@rollup/plugin-replace'
 
 export default {
-    input: 'index.js',
+    input: '_index.js',
     output: {
         sourcemap: true,
         format: 'cjs',

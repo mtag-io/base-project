@@ -1,0 +1,1 @@
+export {default as TestData} from './test-data/TestData.svelte'
