@@ -10,6 +10,7 @@
     import BookingProcess from "../sections/BookingProcess.svelte";
     import ContactComponent from "../../components/contact/ContactComponent.svelte";
     import Contact from "../sections/Contact.svelte";
+    import Catalogue from "../sections/Catalogue.svelte";
 
     console.log(clientsDB)
     const poster = 'assets/logo/logo400.png'
@@ -40,7 +41,7 @@
     </section>
 
     <section id="catalogue">
-
+        <Catalogue/>
     </section>
 
     <section id="booking process">

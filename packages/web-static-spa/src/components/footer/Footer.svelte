@@ -1,5 +1,5 @@
 <script>
-    import {Footer, Icon, Divider} from 'svelte-materialify/src';
+    import {Footer, Icon} from 'svelte-materialify/src';
 
     import {mdiFacebook} from '@mdi/js';
     import { mdiTwitter } from '@mdi/js';
