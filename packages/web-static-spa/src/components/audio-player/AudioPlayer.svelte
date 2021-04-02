@@ -1,29 +1,61 @@
 <script>
-    import { audioData } from '../../local-DB/audioData.js';
-
     import TrackHeading from './TrackHeading.svelte';
     import ProgressBarTime from './ProgressBarTime.svelte';
     import Controls from './Controls.svelte';
     import VolumeSlider from './VolumeSlider.svelte';
     import PlayList from './PlayList.svelte';
 
+    import {onMount} from "svelte";
+
+    let catalogues = [];
+    let error = null
+
+    onMount(async () => {
+        const parseJSON = (resp) => (resp.json ? resp.json() : resp);
+        const checkStatus = (resp) => {
+            if (resp.status >= 200 && resp.status < 300) {
+                return resp;
+            }
+            return parseJSON(resp).then((resp) => {
+                throw resp;
+            });
+        };
+        const headers = {
+            'Content-Type': 'application/json',
+        };
+
+        try {
+            const res = await fetch("http://localhost:1337/catalogues", {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            }).then(checkStatus)
+                .then(parseJSON);
+            catalogues = res
+        } catch (e) {
+            error = e
+        }
+    });
+
+
     // Get Audio track
     let trackIndex = 0;
     // $: console.log(trackIndex)
-    let audioFile = new Audio(audioData[trackIndex].url);
-    let trackTitle = audioData[trackIndex].name;
+    let audioFile = new Audio(catalogues[trackIndex].audio);
+    let trackTitle = catalogues[trackIndex].title;
 
     const loadTrack = () => {
-        audioFile = new Audio(audioData[trackIndex].url);
+        audioFile = new Audio(catalogues[trackIndex].audio);
         audioFile.onloadedmetadata = () => {
             totalTrackTime = audioFile.duration;
             updateTime();
         }
-        trackTitle = audioData[trackIndex].name;
+        trackTitle = catalogues[trackIndex].title;
     }
 
     const autoPlayNextTrack = () => {
-        if (trackIndex <= audioData.length-1) {
+        if (trackIndex <= catalogues.length-1) {
             trackIndex += 1;
             loadTrack();
             audioFile.play();

@@ -1,21 +1,20 @@
 {
   "kind": "collectionType",
-  "collectionName": "test_data",
+  "collectionName": "text_blocks",
   "info": {
-    "name": "test-data",
-    "description": ""
+    "name": "Text-block"
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "attributes": {
-    "name": {
+    "title": {
       "type": "string"
     },
-    "anyNumber": {
-      "type": "integer"
+    "content": {
+      "type": "richtext"
     }
   }
 }

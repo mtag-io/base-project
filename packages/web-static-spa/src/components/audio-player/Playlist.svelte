@@ -1,9 +1,13 @@
 <script>
-    import { audioData } from '../../local-DB/audioData'
 
     let listIsShowing = false;
 
     const showPlayList = () => listIsShowing = !listIsShowing
+
+    let catalogues = [];
+    let error = null
+
+
 </script>
 
 
@@ -12,13 +16,18 @@
             class:active={listIsShowing}
             on:click={showPlayList}>&#9776; Playlist</button>
 
+
+    {#if error !== null}
+        {error}
+    {:else}
     <ul class:show-list={listIsShowing}>
-        {#each audioData as {name, url}, i}
+        {#each catalogues as catalogue, i}
             <li data-track-id={i}
                 on:click>
-                {name}</li>
+                {catalogue.title}</li>
         {/each}
     </ul>
+        {/if}
 </section>
 
 
