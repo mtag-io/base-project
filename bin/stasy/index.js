@@ -6,11 +6,11 @@ const {createDestPaths} = require('./helpers')
 const destPaths = createDestPaths(config)
 const app = express()
 app.use(express.json())
-const {STATIC_SYNC_PORT} = process.env
+const {STASY_PORT} = process.env
 
 
-app.listen(STATIC_SYNC_PORT, () => {
-    console.log(`Sync server started on ${STATIC_SYNC_PORT}`)
+app.listen(STASY_PORT, () => {
+    console.log(`Sync server started on ${STASY_PORT}`)
 })
 
 app.get('/', (req) => {

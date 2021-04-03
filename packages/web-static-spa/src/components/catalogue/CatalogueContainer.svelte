@@ -16,7 +16,7 @@
 </script>
 
 <div>
-    {#each songs as song, i}
+    {#each songs as song}
         <Card>
             <Row>
                 <Col cols={8}>

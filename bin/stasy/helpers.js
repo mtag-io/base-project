@@ -1,7 +1,7 @@
 const {join, resolve} = require('path')
 const fs = require('fs')
 
-export const findCwd = () => {
+const findCwd = () => {
     let root = process.cwd()
     while(root !== '/') {
         const pkgPth = join(root, '/package.json')
@@ -14,7 +14,7 @@ export const findCwd = () => {
     }
 }
 
-export const createDestPaths = (config) => {
+const createDestPaths = (config) => {
     const [pkg, pth] = findCwd()
     return pkg['workspaces'].reduce(
         (acc, ws) => {
@@ -29,4 +29,9 @@ export const createDestPaths = (config) => {
             return acc
         }, []
     )
+}
+
+module.exports = {
+    findCwd,
+    createDestPaths
 }

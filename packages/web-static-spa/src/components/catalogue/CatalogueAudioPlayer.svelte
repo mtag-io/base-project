@@ -17,6 +17,8 @@
         // Like players.push(player)
         players.add(player)
     })
+
+    console.log(src)
 </script>
 
 <div>

@@ -8,7 +8,7 @@
     import {clientsDB} from "../../local-DB/clients"
     import {TestimonialsCLDB} from "../../local-DB/clients-testimonials"
     import BookingProcess from "../sections/BookingProcess.svelte";
-    import ContactComponent from "../../components/contact/ContactComponent.svelte";
+    //import ContactComponent from "../../components/contact/ContactComponent.svelte";
     import Contact from "../sections/Contact.svelte";
     import Catalogue from "../sections/Catalogue.svelte";
 
@@ -18,16 +18,11 @@
 </script>
 
 <div>
-    <section id="home">
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
+    <section id="home" class="mt-32">
+        <audio controls autoplay controls>
+        <source src="media/galileio_bf9b18c86e.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
     </section>
 
     <section id="about">

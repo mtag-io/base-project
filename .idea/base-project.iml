@@ -48,6 +48,12 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/web-static-spa/src/components/__safe-old-comps" />
       <excludeFolder url="file://$MODULE_DIR$/packages/common/components/player" />
       <excludeFolder url="file://$MODULE_DIR$/packages/web-static" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/web-app" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/app-server" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/back-common" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/common" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/front-common" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/static-server" />
     </content>
     <content url="file://$MODULE_DIR$/@web/@common" />
     <content url="file://$MODULE_DIR$/packages/web-app/src/components" />
