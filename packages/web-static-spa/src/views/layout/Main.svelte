@@ -19,10 +19,12 @@
 
 <div>
     <section id="home" class="mt-32">
-        <audio controls autoplay controls>
-        <source src="media/galileio_bf9b18c86e.wav" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio>
+
+        <h1>Home</h1>
+<!--        <audio controls autoplay>-->
+<!--            <source src="media/galileio_bf9b18c86e.wav" type="audio/wav">-->
+<!--            Your browser does not support the audio element.-->
+<!--        </audio>-->
     </section>
 
     <section id="about">
@@ -44,7 +46,7 @@
     </section>
 
     <section id="contact">
-    <Contact/>
+        <Contact/>
     </section>
 </div>
 
