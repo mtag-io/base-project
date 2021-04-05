@@ -1,5 +1,6 @@
 const {join} = require('path')
-const fs = require('fs')
+const {existsSync, lstatSync} = require('fs')
+const glob = require('glob')
 const {PKG} = require('./constants')
 
 /**
@@ -8,15 +9,13 @@ const {PKG} = require('./constants')
  */
 
 /**
- * @param {object} opts
- * @param {}
  * @returns {[Pkg, string]}
  */
-const getRoot = (opts={}) => {
+const getRoot = () => {
     let root = process.cwd()
-    while(root !== '/') {
+    while (root !== '/') {
         const pkgPth = join(root, '/package.json')
-        if (fs.existsSync(pkgPth)) {
+        if (existsSync(pkgPth)) {
             const pkg = require(pkgPth)
             if (pkg['workspaces']) return [pkg, root]
         }
@@ -32,10 +31,10 @@ const createDestPaths = packages => {
     const [pkg, pth] = getRoot()
     return pkg['workspaces'].reduce(
         (acc, ws) => {
-            if(ws[ws.length -1]==='*'){
+            if (ws[ws.length - 1] === '*') {
                 packages.forEach(
                     pk => {
-                        if(fs.lstatSync(join(pth, ws.slice(0, -1), pk)).isDirectory())
+                        if (lstatSync(join(pth, ws.slice(0, -1), pk)).isDirectory())
                             acc[pk] = join(pth, ws.slice(0, -1), pk)
                     }
                 )
@@ -45,24 +44,24 @@ const createDestPaths = packages => {
     )
 }
 
+const isPkg = pth => existsSync(join(pth, PKG))
+
+const pkgList = pth => {
+    glob('*/', {cwd: pth})
+        .filter(d => isPkg(join(pth, d)))
+        .map(d => join(pth, d))
+}
+
+
 /**
- * @name getPackage
- * @description gets a single package.json
- * @param {String?} root
- * @return {Package}
+ * @name scanPkg
+ * @description
  */
-const getPackage = (root = process.cwd()) => {
-    const rootPkg = join(root, PKG)
-    try {
-        return {
-            path: root,
-            data: JSON.parse(
-                fs.readFileSync(rootPkg, 'utf8')
-            )
-        }
-    } catch (err) {
-        throwErr(`Couldn't read/find any valid ${PKG} in ${rootPkg}. Reason: ${err.message}`)
-    }
+const scanPkg = () => {
+    const [rootPkg, root] = getRoot()
+    rootPkg['workspace'].reduce((acc, pk) => {
+        if(pk.endsWith('*'))
+    })
 }
 
 /**

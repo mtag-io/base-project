@@ -1,10 +1,8 @@
 <script>
-    const props = getStaticProps()
-    console.log(props)
+    import props from 'static-props'
 </script>
-
-<ul>
-    {#each props as prop}
-        <li>{prop.name}</li>
-    {/each}
-</ul>
+    <ul>
+        {#each props as prop}
+            <li>{prop.name}</li>
+        {/each}
+    </ul>
