@@ -16,6 +16,17 @@
     },
     "anyNumber": {
       "type": "integer"
+    },
+    "clip": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

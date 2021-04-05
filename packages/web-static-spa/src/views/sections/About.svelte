@@ -1,6 +1,6 @@
 <script>
-    import Title from "../../components/Title.svelte";
-    import TBody from "../../components/TBody.svelte";
+    import Title from "components/Title.svelte";
+    import TBody from "components/TBody.svelte";
 
     export let items
 </script>
