@@ -1,6 +1,6 @@
 <script>
-    import Layout from 'views/layout/Layout.svelte'
-    import Main from 'views/layout/Main.svelte'
+    import Layout from 'components/layout/Layout.svelte'
+    import Main from 'components/layout/Main.svelte'
 </script>
 
 <style lang="scss" global>
