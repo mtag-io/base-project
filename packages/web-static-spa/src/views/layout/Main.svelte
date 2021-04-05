@@ -11,45 +11,67 @@
     import ContactComponent from "../../components/contact/ContactComponent.svelte";
     import Contact from "../sections/Contact.svelte";
     import Catalogue from "../sections/Catalogue.svelte";
+    import Home from "../sections/Home.svelte";
 
     console.log(clientsDB)
     const poster = 'assets/logo/logo400.png'
     const source = ['target.mp4']
 </script>
 
-<div>
+<div class="main">
     <section id="home">
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
-        <h1>Home page</h1>
+        <Home/>
     </section>
 
     <section id="about">
-        <About items={aboutDB}/>
+        <div class="container">
+            <About items={aboutDB}/>
+        </div>
     </section>
 
     <section id="clients">
-        <Clients clients={clientsDB}
-                 titleT={TestimonialsCLDB}
-                 items={TestimonialsCLDB}/>
+        <div class="container">
+            <Clients clients={clientsDB}
+                     titleT={TestimonialsCLDB}
+                     items={TestimonialsCLDB}/>
+        </div>
     </section>
 
     <section id="catalogue">
-        <Catalogue/>
+        <div class="container">
+            <Catalogue/>
+        </div>
     </section>
 
     <section id="booking process">
-        <BookingProcess/>
+        <div class="container">
+            <BookingProcess/>
+        </div>
     </section>
 
     <section id="contact">
-    <Contact/>
+        <div class="container">
+            <Contact/>
+        </div>
     </section>
 </div>
 
+<style>
+    section {
+        padding-top: 7rem;
+        /*text-align: center;*/
+    }
+
+    .container {
+        /*padding-top: 7rem;*/
+        text-align: center;
+        width: 85%;
+        max-width: 65em;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .main{
+        background-color: black;
+        color: white;
+    }
+</style>
