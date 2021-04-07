@@ -1,3 +1,10 @@
-<div class="mt-16">
+<div class="page">
     <slot/>
 </div>
+
+
+<style>
+    .page{
+        margin-top: 56px;
+    }
+</style>

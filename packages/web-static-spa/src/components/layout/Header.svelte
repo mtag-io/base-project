@@ -50,9 +50,10 @@
         <SubHeader class="d-none d-sm-flex" anchors="{homeAnchors}"/>
     </div>
 </AppBar>
-<NavigationDrawer class="pt-16" fixed active="{drawer}">
-    <DrawerContent anchors="{homeAnchors}" {close}/>
-</NavigationDrawer>
-<Overlay active="{drawer}" absolute on:click={toggleDrawer} index={1}/>
+<div class="d-sm-none">
+    <NavigationDrawer class="pt-16  s-navigation-drawer__content " clipped fixed active="{drawer}">
+        <DrawerContent anchors="{homeAnchors}" {close}/>
+    </NavigationDrawer>
+    <Overlay active="{drawer}" absolute on:click={toggleDrawer} index={1}/>
 
-
+</div>

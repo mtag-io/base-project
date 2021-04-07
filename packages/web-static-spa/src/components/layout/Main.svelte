@@ -1,19 +1,12 @@
 <script>
-    import About from '../../sections/About/About.svelte'
-    import Clients from "../../sections/Clients.svelte"
+    import {About, Clients, Catalogue, Contact, BookingProcess, Home} from '../../sections/index'
 
 
     //Databases
     import {aboutDB} from "../../local-DB/about"
     import {clientsDB} from "../../local-DB/clients"
     import {TestimonialsCLDB} from "../../local-DB/clients-testimonials"
-    import BookingProcess from "../../sections/BookingProcess.svelte";
-    import ContactComponent from "../contact/ContactComponent.svelte";
-    import Contact from "../../sections/Contact/Contact.svelte";
-    import Catalogue from "../../sections/Catalogue.svelte";
-    import Home from "../../sections/Home/Home.svelte";
 
-    console.log(clientsDB)
     const poster = 'assets/logo/logo400.png'
     const source = ['target.mp4']
 </script>
@@ -57,21 +50,18 @@
 </div>
 
 <style>
-    section {
-        /*padding-top: 7rem;*/
-        /*text-align: center;*/
+    section{
+        padding-top: 94px;
+        padding-bottom: 40px;
     }
-
     .container {
-        /*padding-top: 7rem;*/
         text-align: center;
+        justify-content: center;
         width: 85%;
         max-width: 65em;
         height: 100%;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
+
     }
-    .main{
-        background-color: black;
-        color: white;
-    }
+
 </style>
