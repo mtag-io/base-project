@@ -32,13 +32,23 @@
             <Icon path={mdiMenu}/>
         </Button>
     </div>
-    <span slot="title" class="d-none d-sm-block">
+
+
+    <span class="d-none d-sm-block">
         <a href="/" class="white-text">
             <AppLogo/>
             <b>{appName}</b>
          </a>
     </span>
-    <div style="flex-grow:1"></div>
+
+
+
+    <div style="flex-grow:1;display: flex; justify-content: center">
+        <span class="d-sm-none ">
+        <a href="/" class="white-text">
+            <AppLogo/>
+         </a>
+    </span></div>
     <Button class="primary-color d-none d-sm-block pr-2">
         <Icon path="{mdiAccountCircle}" class="mr-2"/>
         AUTH
