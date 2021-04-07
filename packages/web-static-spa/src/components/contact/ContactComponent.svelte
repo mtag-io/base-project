@@ -21,9 +21,7 @@
     </Row>
     <Row>
         <Col>
-            <Col>
-                <TextField counter="25" rules={emailRules}>Email</TextField>
-            </Col>
+            <TextField counter="25" rules={emailRules}>Email</TextField>
         </Col>
     </Row>
     <Row>

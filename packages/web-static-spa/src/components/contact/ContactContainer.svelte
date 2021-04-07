@@ -16,9 +16,8 @@
 <style>
     .container {
         padding-left: 20px;
-        margin-bottom: 12px;
         display: flex;
         justify-content: center;
-        margin-top: 12px;
+        margin-top: 20px;
     }
 </style>
