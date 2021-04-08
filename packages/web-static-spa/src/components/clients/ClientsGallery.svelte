@@ -1,12 +1,20 @@
 <script>
+    import {Card, Row, Col} from 'svelte-materialify/src';
+
     export let gallery
 
 </script>
 
-<div>
+
     {#each gallery as image}
-        <div>
-            <img src={image} alt="images"/>
-        </div>
+        <Col>
+            <Card>
+                <Row>
+                    <Col>
+                        <img src={image} alt="images"/>
+                    </Col>
+                </Row>
+            </Card>
+        </Col>
     {/each}
-</div>
+

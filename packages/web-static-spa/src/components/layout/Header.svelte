@@ -20,6 +20,7 @@
         'home',
         'about',
         'clients',
+        'testimonials',
         'catalogue',
         'booking process',
         'contact',

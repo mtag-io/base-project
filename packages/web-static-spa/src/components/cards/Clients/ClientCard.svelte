@@ -1,22 +1,18 @@
 <script>
-
     import {Card, Row, Col} from 'svelte-materialify/src';
+
+
     export let items
-
 </script>
-
 
     {#each items as item}
         <Col>
             <Card>
                 <Row>
                     <Col>
-                        {item.body}
-                        <br/>
-                        {item.author}
+
                     </Col>
                 </Row>
             </Card>
         </Col>
     {/each}
-

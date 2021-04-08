@@ -10,7 +10,5 @@
     <Title>{title}</Title>
     <TBody>{body}</TBody>
     <slot name="gallery"/>
-    <slot name="testimonials"/>
-    <slot/>
 </div>
 
