@@ -1,8 +1,9 @@
 {
-  "kind": "collectionType",
-  "collectionName": "app",
+  "kind": "singleType",
+  "collectionName": "apps",
   "info": {
-    "name": "app"
+    "name": "App",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -14,7 +15,10 @@
       "type": "string"
     },
     "description": {
-      "type": "richtext"
+      "type": "string"
+    },
+    "authConfig": {
+      "type": "json"
     }
   }
 }
