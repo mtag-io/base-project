@@ -43,6 +43,8 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="bce4ddf8-870d-47b1-8c67-bb643434ec36" dataset="devdb.user" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="bce4ddf8-870d-47b1-8c67-bb643434ec36" dataset="static_server.pentru_anas" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="bce4ddf8-870d-47b1-8c67-bb643434ec36" dataset="static_server.test_data" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />

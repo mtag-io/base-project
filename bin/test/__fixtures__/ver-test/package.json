@@ -1,7 +1,0 @@
-{
-  "name": "ver-tester",
-  "version": "1.0.0",
-  "workspace": [
-    "packages"
-  ]
-}
