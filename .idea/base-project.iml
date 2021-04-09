@@ -6,7 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/app-server/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/packages/back-common/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/packages/front-common/test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/bin/stasy/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/bin/@commands/ssg/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/bin/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
@@ -54,6 +55,7 @@
       <excludeFolder url="file://$MODULE_DIR$/packages/common" />
       <excludeFolder url="file://$MODULE_DIR$/packages/front-common" />
       <excludeFolder url="file://$MODULE_DIR$/packages/static-server" />
+      <excludeFolder url="file://$MODULE_DIR$/bin/_todo" />
     </content>
     <content url="file://$MODULE_DIR$/@web/@common" />
     <content url="file://$MODULE_DIR$/packages/web-app/src/components" />

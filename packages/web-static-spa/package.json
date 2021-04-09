@@ -7,7 +7,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv __public__ -s",
-    "theme": "node ../../bin/sync-theme.js"
+    "theme": "node ../../bin/_todo/sync-theme.js"
   },
   "dependencies": {
     "@mdi/js": "^5.9.55",

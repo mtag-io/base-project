@@ -1,18 +1,7 @@
-const {join, resolve} = require('path')
+const {join} = require('path')
 const fs = require('fs')
+const {findCwd} = require('../../lib/helpers/fs')
 
-const findCwd = () => {
-    let root = process.cwd()
-    while(root !== '/') {
-        const pkgPth = join(root, '/package.json')
-        if (fs.existsSync(pkgPth)) {
-            // noinspection JSFileReferences
-            const pkg = require(pkgPth)
-            if (pkg['workspaces']) return [pkg, root]
-        }
-        root = resolve(root, '../')
-    }
-}
 
 const createDestPaths = (config) => {
     const [pkg, pth] = findCwd()
@@ -32,6 +21,5 @@ const createDestPaths = (config) => {
 }
 
 module.exports = {
-    findCwd,
     createDestPaths
 }

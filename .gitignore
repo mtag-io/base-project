@@ -1,5 +1,5 @@
 **/node_modules/
-bin/stasy/.env
+bin/@commands/ssg/.env
 **/dist
 **/build/
 **/.DS_Store
