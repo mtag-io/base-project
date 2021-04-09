@@ -1,10 +1,9 @@
 **/node_modules/
-**/.env
+bin/@commands/ssg/.env
 **/dist
 **/build/
 **/.DS_Store
 .env
 .DS_Store
-__storage__
 __data__/db/
 __public__/assets/vendor/

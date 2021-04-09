@@ -17,15 +17,12 @@
     "anyNumber": {
       "type": "integer"
     },
-    "app": {
-      "model": "app"
-    },
-    "media": {
+    "clip": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
         "files",
+        "images",
         "videos"
       ],
       "plugin": "upload",

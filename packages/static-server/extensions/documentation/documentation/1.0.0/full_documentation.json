@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/03/2021 1:03:57 PM"
+    "x-generation-date": "04/07/2021 12:20:56 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -45,7 +45,7 @@
     }
   ],
   "paths": {
-    "/apps": {
+    "/pentru-anas": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -55,9 +55,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/App"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -96,7 +97,7 @@
         },
         "summary": "",
         "tags": [
-          "App"
+          "Pentru-ana"
         ],
         "parameters": [
           {
@@ -246,72 +247,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/App"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "App"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewApp"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/apps/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -351,12 +289,22 @@
         },
         "summary": "",
         "tags": [
-          "App"
+          "Pentru-ana"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPentru-ana"
+              }
+            }
+          }
+        }
       }
     },
-    "/apps/{id}": {
+    "/pentru-anas/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -366,7 +314,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/App"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -404,7 +356,64 @@
         },
         "summary": "",
         "tags": [
-          "App"
+          "Pentru-ana"
+        ],
+        "parameters": []
+      }
+    },
+    "/pentru-anas/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pentru-ana"
         ],
         "parameters": [
           {
@@ -428,7 +437,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/App"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -466,7 +479,7 @@
         },
         "summary": "",
         "tags": [
-          "App"
+          "Pentru-ana"
         ],
         "requestBody": {
           "description": "",
@@ -474,7 +487,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewApp"
+                "$ref": "#/components/schemas/NewPentru-ana"
               }
             }
           }
@@ -540,7 +553,7 @@
         },
         "summary": "",
         "tags": [
-          "App"
+          "Pentru-ana"
         ],
         "parameters": [
           {
@@ -3309,7 +3322,7 @@
   },
   "components": {
     "schemas": {
-      "App": {
+      "Pentru-ana": {
         "required": [
           "id"
         ],
@@ -3317,11 +3330,11 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "nume": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
+          "aiInteles": {
+            "type": "boolean"
           },
           "published_at": {
             "type": "string",
@@ -3329,13 +3342,13 @@
           }
         }
       },
-      "NewApp": {
+      "NewPentru-ana": {
         "properties": {
-          "name": {
+          "nume": {
             "type": "string"
           },
-          "description": {
-            "type": "string"
+          "aiInteles": {
+            "type": "boolean"
           },
           "published_at": {
             "type": "string",
@@ -3363,32 +3376,7 @@
           "anyNumber": {
             "type": "integer"
           },
-          "app": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "media": {
+          "clip": {
             "type": "array",
             "items": {
               "required": [
@@ -3467,9 +3455,6 @@
           },
           "anyNumber": {
             "type": "integer"
-          },
-          "app": {
-            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -3765,9 +3750,6 @@
     }
   },
   "tags": [
-    {
-      "name": "App"
-    },
     {
       "name": "Email - Email"
     },

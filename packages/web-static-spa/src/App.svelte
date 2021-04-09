@@ -1,6 +1,7 @@
 <script>
-    import Layout from './layout/Layout.svelte'
-    import {TestData} from './sections'
+    import Layout from 'components/layout/Layout.svelte'
+    import Main from 'components/layout/Main.svelte'
+    // import {MaterialApp} from 'svelte-materialify/src'
 </script>
 
 <style lang="scss" global>
@@ -19,19 +20,19 @@
     @extend .min-slim;
     scroll-behavior: smooth;
   }
+
 </style>
 
 
 <Layout>
-    <div>Cucubau</div>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <TestData/>
+    <Main/>
 </Layout>
 
+<!--<MaterialApp>-->
+<!--    <div class="d-sm-none">-->
+<!--        Orice-->
+<!--    </div>-->
+<!--</MaterialApp>-->
 
 
 
