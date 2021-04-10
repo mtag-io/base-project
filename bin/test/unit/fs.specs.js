@@ -1,8 +1,8 @@
-const fs = require('fs')
-const {WORKSPACE} = require('../../lib/constants')
-const {join, resolve} = require('path')
-const {expect} = require('chai')
-const {findRoot, mapPackages, updateRootPkg} = require('../../lib/helpers/fs')
+import fs from'fs'
+import {join, resolve} from'path'
+import {expect} from'chai'
+import {findRoot, mapPackages, updateRootPkg} from'../../lib/helpers/fs'
+import {WORKSPACE} from'../../lib/constants'
 
 describe('fs unit tests', () => {
 
@@ -20,6 +20,7 @@ describe('fs unit tests', () => {
         'package1': resolve(join(__dirname, '../', '__fixtures__/fs/packages/package1')),
         'package2': resolve(join(__dirname, '../', '__fixtures__/fs/packages/package2'))
     }
+
     describe('findRoot', () => {
 
         beforeEach(setCwd)
@@ -46,7 +47,9 @@ describe('fs unit tests', () => {
         afterEach(resetCwd)
 
         it('should map the packages', () => {
-            const pkgMap = mapPackages()
+            const root = resolve(join(__dirname, '../', '__fixtures__/fs'))
+            const pkg = require(join(root,'package.json'))
+            const pkgMap = mapPackages(pkg, root)
             expect(pkgMap).to.deep.equal(map)
         })
     })

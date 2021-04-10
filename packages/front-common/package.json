@@ -11,9 +11,8 @@
   },
   "dependencies": {
     "@rollup/plugin-replace": "^2.4.1",
-    "chai": "^4.3.3",
-    "esm": "^3.2.25",
-    "mocha": "^8.3.1",
+    "chai": "^4.3.4",
+    "moch": "^0.0.1",
     "mock-local-storage": "^1.1.17",
     "nanoid": "^3.1.22",
     "uuid": "^8.3.2"

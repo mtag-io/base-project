@@ -1,4 +1,4 @@
-const cli = require('commander')
+import _cli from 'commander'
 
 /**
  * @typedef {Object} CommandData
@@ -10,7 +10,7 @@ const cli = require('commander')
  * @property {Function} action
  */
 
-Object.defineProperty(cli, 'addCommand', {
+Object.defineProperty(_cli, 'addCommand', {
     writable: false,
     enumerable: false,
     /**
@@ -19,7 +19,7 @@ Object.defineProperty(cli, 'addCommand', {
     value: function (comData) {
         let _cli = this['command'](comData.command)
         if (comData.description)
-        _cli =  _cli['description'](...comData.description)
+            _cli = _cli['description'](...comData.description)
         if (comData.option && comData.option.length) comData.option.forEach(
             opt => {
                 _cli = _cli['option'](...opt)
@@ -29,4 +29,4 @@ Object.defineProperty(cli, 'addCommand', {
     }
 })
 
-module.exports = cli
+export const cli  = _cli

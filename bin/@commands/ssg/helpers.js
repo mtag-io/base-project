@@ -1,25 +1,34 @@
-const {join} = require('path')
-const fs = require('fs')
-const {findCwd} = require('../../lib/helpers/fs')
+import {dirname, join, sep} from 'path'
+import {existsSync, statSync, writeFileSync} from 'fs'
+import glob from 'glob'
+import {hookFile} from './hook'
+import {STATIC_PROPS_FILE} from './config'
 
 
-const createDestPaths = (config) => {
-    const [pkg, pth] = findCwd()
-    return pkg['workspaces'].reduce(
-        (acc, ws) => {
-            if(ws[ws.length -1]==='*'){
-                config['packages'].forEach(
-                    pk => {
-                        if(fs.lstatSync(join(pth, ws.slice(0, -1), pk)).isDirectory())
-                            acc.push(join(ws.slice(0, -1), pk))
-                    }
-                )
-            }
+export const getStaticComponents = root =>
+    glob.sync(`**/${STATIC_PROPS_FILE}`, {cwd: root})
+        .reduce(   (acc, pth) => {
+            acc[dirname(pth).split(sep).pop()] = pth
             return acc
-        }, []
+        })
+
+export const hookPath = (comp, modelPath, models = 'models') => {
+    if (existsSync(join(modelPath, comp)) && statSync(join(modelPath, comp)).isDirectory())
+        return join(modelPath, comp, models, comp + '.js')
+    comp = comp.replace(/([A-Z])/g, (c, _, idx) => !idx
+        ? c.toLowerCase()
+        : '-' + c.toLowerCase()
     )
+    if (existsSync(join(modelPath, comp)) && statSync(join(modelPath, comp)).isDirectory())
+        return join(modelPath, comp, models, comp + '.js')
 }
 
-module.exports = {
-    createDestPaths
+export const setupHook = (comp, modelPath) => {
+    writeFileSync(
+        hookPath(comp, modelPath),
+        hookFile)
+}
+
+const refreshStaticComponent = comp => {
+
 }

@@ -1,12 +1,10 @@
-const glob = require('glob')
-const {commandsGlob, commandsDir} = require('../config')
+import * as glob from'glob'
+import {COMMAND_GLOB, COMMAND_DIR} from'../config'
 
 /**
  * @returns {string[]}
  */
 
-const collector = () => glob
-    .sync(commandsGlob , {cwd: commandsDir, absolute: true})
+export const collector = () => glob
+    .sync(COMMAND_GLOB , {cwd: COMMAND_DIR, absolute: true})
     .map(pth => require(pth))
-
-module.exports = collector()

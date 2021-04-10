@@ -1,8 +1,8 @@
-const {resolve, join, sep} = require('path')
-const fs = require('fs')
-const glob = require('glob')
-const {throwErr} = require('./console')
-const {PKG, DEVERR, WORKSPACE} = require('../constants')
+import {join, resolve, sep} from 'path'
+import fs from 'fs'
+import glob from 'glob'
+import {throwErr} from './console'
+import {DEVERR, PKG, WORKSPACE} from '../constants'
 
 /**
  * @name readJson
@@ -11,7 +11,7 @@ const {PKG, DEVERR, WORKSPACE} = require('../constants')
  * @param {String?} target
  * @return {Object}
  */
-const readJson = (pth, target = 'target') => {
+export const readJson = (pth, target = 'target') => {
     if (!fs.existsSync(pth))
         throwErr(`Couldn't locate the ${target} file in ${pth}.`)
     let raw = ''
@@ -34,7 +34,7 @@ const readJson = (pth, target = 'target') => {
  * @param {Object} data
  * @param {String?} target
  */
-const writeJson = (pth, data, target = 'target') => {
+export const writeJson = (pth, data, target = 'target') => {
     let raw = ''
     try {
         raw = JSON.stringify(data, null, 2)
@@ -54,7 +54,7 @@ const writeJson = (pth, data, target = 'target') => {
  * @param {String?} root
  * @return {object}
  */
-const getPackage = root => {
+export const getPackage = root => {
     try {
         return JSON.parse(fs.readFileSync(root, 'utf8'))
     } catch (err) {
@@ -68,7 +68,7 @@ const getPackage = root => {
  * @param {Object} pkg
  * @param {String} root
  */
-const putPackage = (pkg, root) => {
+export const putPackage = (pkg, root) => {
     try {
         fs.writeFileSync(join(root, PKG), JSON.stringify(pkg, null, 2))
     } catch (err) {
@@ -81,13 +81,13 @@ const putPackage = (pkg, root) => {
  * @param {boolean|string} ws
  * @returns {[Object, string]}
  */
-const findRoot = ws => {
+export const findRoot = ws => {
     let root = process.cwd()
     while (root !== '/') {
         const pkgPth = join(root, PKG)
         if (fs.existsSync(pkgPth)) {
             const pkg = getPackage(pkgPth)
-            if(!ws) return [pkg, root]
+            if (!ws) return [pkg, root]
             if (pkg[WORKSPACE]) return [pkg, root]
         }
         root = resolve(root, '../')
@@ -100,34 +100,26 @@ const findRoot = ws => {
  * @param {Object} pkg
  * @param {String} root
  */
-const mapPackages = (pkg, root) => pkg[WORKSPACE].reduce((acc, ws) => {
-        if (ws[ws.length - 1] === '*')
-            glob.sync('*/', {
-                cwd: join(root, ws.slice(0, -1)),
-                absolute: true
+export const mapPackages = (pkg, root) => pkg[WORKSPACE].reduce((acc, ws) => {
+    if (ws[ws.length - 1] === '*')
+        glob.sync('*/', {
+            cwd: join(root, ws.slice(0, -1)),
+            absolute: true
+        })
+            .forEach(d => {
+                if (fs.existsSync(join(d, PKG)))
+                    acc[d.split(sep).pop()] = d
             })
-                .forEach(d => {
-                    if (fs.existsSync(join(d, PKG)))
-                        acc[d.split(sep).pop()] = d
-                })
-        return acc
-    }, {})
+    return acc
+}, {})
 
 /**
  * @description add a key to the monorepo root package json containing all the
  * packages and their respective absolute paths
  */
-const updateRootPkg = () => {
+export const updateRootPkg = () => {
     const ws = true
     const [pkg, root] = findRoot(ws)
     pkg.wsMap = mapPackages(pkg, root)
     putPackage(pkg, root)
-}
-
-
-module.exports = {
-    findRoot,
-    mapPackages,
-    updateRootPkg,
-    putPackage
 }

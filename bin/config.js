@@ -1,7 +1,2 @@
-const commandsDir = '@commands'
-const commandsGlob = `**/index.js`
-
-module.exports = {
-    commandsDir,
-    commandsGlob
-}
+export const COMMAND_DIR = '@commands'
+export const COMMAND_GLOB = `**/index.js`

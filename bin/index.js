@@ -1,13 +1,13 @@
 #!/usr/local/bin/node
 
-const commandsData = require('./lib/collector')
-const cli = require('./lib/cli')
-const chalk = require('chalk')
-const {version} = require('./package.json')
+import {collector} from'./lib/collector'
+import {cli} from'./lib/cli'
+import chalk from'chalk'
+import {version} from'./package.json'
 
 cli.version(version, '-v, --ver', 'display the current ver')
 
-commandsData.forEach(
+collector().forEach(
     comData => cli.addCommand(comData)
 )
 

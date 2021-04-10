@@ -17,11 +17,10 @@
     "jsdoc-to-markdown": "^6.0.1"
   },
   "scripts": {
-    "test": "NODE_ENV=TEST mocha test/**/*.specs.js",
-    "mk-env-test": "node ./test/__fixtures__/env-test/create-test-env.js"
+    "test": "NODE_ENV=TEST mocha test/**/*.specs.js"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.2.1"
+    "mocha": "^8.3.1",
+    "chai": "^4.3.4"
   }
 }

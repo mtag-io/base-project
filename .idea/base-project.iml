@@ -70,5 +70,7 @@
     <orderEntry type="library" name="@types/color" level="application" />
     <orderEntry type="library" name="@types/lodash" level="application" />
     <orderEntry type="library" name="@types/express" level="application" />
+    <orderEntry type="library" name="@types/mocha" level="application" />
+    <orderEntry type="library" name="@types/chai" level="application" />
   </component>
 </module>
