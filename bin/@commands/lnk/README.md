@@ -31,9 +31,25 @@ creezi symlynk cu sursa -> key  dest -> value
 
 2. add  symlinks to gitignore (glob)
 
-const files = fs.readdirSync(dir, {encoding: 'utf8', withFileTypes: true});
-files.forEach((file) => {
-if (file.isSymbolicLink()) {
-console.log('found symlink!');
-}
-}
+glob(`**/${PKG}`, {
+    cwd: wsRoot,
+    absolute: true
+}).reduce(
+    (acc, pth) => {
+            const pkg = readJson(pth)
+            if(pkg.links) {
+                acc.push(
+                    Object.values(pkg.link).map(
+                        shc => join(dirname(pth), shc)
+                )
+                acc = {...acc, ...pkg.links}
+            }
+            return acc
+        }, []
+)
+
+// Am pus un comment in gitignore # links
+// trebuie cautat, sters totul dupa el
+// si adaugat noul allLinks ca mai jos
+
+// allLinks.join('\n')
