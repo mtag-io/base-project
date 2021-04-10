@@ -18,5 +18,14 @@
       "auth": "auth.json",
       "theme": "theme.json"
     }
+  },
+  "wsMap": {
+    "app-server": "/Users/vlad/Documents/zecode/@production/base-project/packages/app-server",
+    "back-common": "/Users/vlad/Documents/zecode/@production/base-project/packages/back-common",
+    "front-common": "/Users/vlad/Documents/zecode/@production/base-project/packages/front-common",
+    "static-server": "/Users/vlad/Documents/zecode/@production/base-project/packages/static-server",
+    "web-app": "/Users/vlad/Documents/zecode/@production/base-project/packages/web-app",
+    "web-static": "/Users/vlad/Documents/zecode/@production/base-project/packages/web-static",
+    "web-static-spa": "/Users/vlad/Documents/zecode/@production/base-project/packages/web-static-spa"
   }
 }

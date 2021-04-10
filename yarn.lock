@@ -3863,7 +3863,7 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-chai@^4.3.3:
+chai@^4.3.3, chai@^4.3.4:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/chai/-/chai-4.3.4.tgz#b55e655b31e1eac7099be4c08c21964fce2e6c49"
   integrity sha512-yS5H68VYOCtN1cjfwumDSuzn/9c+yza4f3reKXlE5rUg7SFcCEy90gJvydNgOYtblyf4Zi6jIWRnXOgErta0KA==
@@ -9984,6 +9984,11 @@ mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@^0.5.5:
   integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
   dependencies:
     minimist "^1.2.5"
+
+moch@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/moch/-/moch-0.0.1.tgz#b4036f32f6b5e3936f12c3fe78c5b81d951a7342"
+  integrity sha1-tANvMva145NvEsP+eMW4HZUac0I=
 
 mocha@^8.3.1:
   version "8.3.2"

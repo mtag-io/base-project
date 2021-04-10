@@ -2,39 +2,15 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/apps",
+      "path": "/app",
       "handler": "app.find",
       "config": {
         "policies": []
       }
     },
     {
-      "method": "GET",
-      "path": "/apps/count",
-      "handler": "app.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/apps/:id",
-      "handler": "app.findOne",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "POST",
-      "path": "/apps",
-      "handler": "app.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
       "method": "PUT",
-      "path": "/apps/:id",
+      "path": "/app",
       "handler": "app.update",
       "config": {
         "policies": []
@@ -42,7 +18,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/apps/:id",
+      "path": "/app",
       "handler": "app.delete",
       "config": {
         "policies": []

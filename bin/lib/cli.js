@@ -1,0 +1,32 @@
+import _cli from 'commander'
+
+/**
+ * @typedef {Object} CommandData
+ * @property {String} short
+ * @property {String} long
+ * @property {String} command
+ * @property {String[]} description
+ * @property {String[]} option
+ * @property {Function} action
+ */
+
+Object.defineProperty(_cli, 'addCommand', {
+    writable: false,
+    enumerable: false,
+    /**
+     * @param {CommandData} comData
+     */
+    value: function (comData) {
+        let _cli = this['command'](comData.command)
+        if (comData.description)
+            _cli = _cli['description'](...comData.description)
+        if (comData.option && comData.option.length) comData.option.forEach(
+            opt => {
+                _cli = _cli['option'](...opt)
+            }
+        )
+        _cli['action'](comData.action)
+    }
+})
+
+export const cli  = _cli

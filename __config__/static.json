@@ -1,7 +1,0 @@
-{
-  "dataFile": "_data.json",
-  "dest": "src/sections",
-  "packages": [
-    "web-static-spa"
-  ]
-}
