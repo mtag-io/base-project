@@ -7,3 +7,4 @@ bin/@commands/ssg/.env
 .DS_Store
 __data__/db/
 __public__/assets/vendor/
+# links
