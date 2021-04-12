@@ -1,5 +1,5 @@
 
-    <div class="body pl-12 pr-12 pt-3 pb-2" >
+    <div class="body pl-12 pr-12 pt-3 pb-10" >
         <slot/>
     </div>
 
@@ -8,6 +8,6 @@
     .body {
         text-align: justify;
         overflow-y:  scroll;
-        height: 140px;
+        height: 350px;
     }
 </style>

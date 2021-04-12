@@ -1,6 +1,6 @@
 <script>
-    import {Card, CardTitle, CardText, Row, Col} from 'svelte-materialify/src';
-    import {CardBodyContainer, CardTitleContainer} from '../index'
+    import {Card, Row, Col} from 'svelte-materialify/src';
+    import {AboutCardBodyContainer, CardTitleContainer} from '../index'
 
     export let items
 </script>
@@ -8,15 +8,15 @@
 
 {#each items as item}
     <Col>
-        <Card>
+        <Card style="width: 450px; height: 400px; overflow: hidden; justify-content: center">
             <Row>
                 <Col>
-                   <CardTitleContainer>
-                        <CardTitle>{item.title}</CardTitle>
-                   </CardTitleContainer>
-                   <CardBodyContainer>
-                        <CardText> {item.body}</CardText>
-                   </CardBodyContainer>
+                    <CardTitleContainer>
+                        {item.title}
+                    </CardTitleContainer>
+                    <AboutCardBodyContainer>
+                        {item.body}
+                    </AboutCardBodyContainer>
                 </Col>
             </Row>
         </Card>

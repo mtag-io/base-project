@@ -1,11 +1,13 @@
 <script>
     import {About, Clients, Catalogue, Contact, BookingProcess, Home} from '../../sections/index'
 
+    import {Container} from 'svelte-materialify/src';
 
     //Databases
     import {clientsDB} from "../../local-DB/clients"
     import {TestimonialsCLDB} from "../../local-DB/clients-testimonials"
     import Testimonials from "../../sections/Testimonials/Testimonials.svelte";
+    import Title from "../Title.svelte";
 
     const poster = 'assets/logo/logo400.png'
     const source = ['target.mp4']
@@ -17,54 +19,57 @@
     </section>
 
     <section id="about">
-        <div class="s-container">
-            <About/>
+
+        <div style="width: 100vh; border-radius: 2px; border-color: black" class="theme--light">
+            <div style="margin-left: 24%; padding-bottom: 20px ;padding-top: 30px;">
+                <Title>About</Title>
+            </div>
         </div>
+        <Container style="height: 100vh;padding-top: 50px; margin-bottom: 100px">
+            <About/>
+        </Container>
     </section>
 
     <section id="clients">
-        <div class="s-container">
+        <Container>
             <Clients clients={clientsDB}/>
-        </div>
+        </Container>
     </section>
 
     <section id="testimonials">
-        <div class="s-container">
-            <Testimonials   titleT={TestimonialsCLDB}
-                            items={TestimonialsCLDB}/>
-        </div>
+        <Container>
+            <Testimonials titleT={TestimonialsCLDB} items={TestimonialsCLDB}/>
+        </Container>
     </section>
 
     <section id="catalogue">
-        <div class="s-container">
+        <Container>
             <Catalogue/>
-        </div>
+        </Container>
     </section>
 
     <section id="booking process">
-        <div class="s-container">
+        <Container>
             <BookingProcess/>
-        </div>
+        </Container>
     </section>
 
     <section id="contact">
-        <div class="s-container">
+        <Container>
             <Contact/>
-        </div>
+        </Container>
     </section>
 </div>
 
 <style>
     section{
-        padding-top: 94px;
-        padding-bottom: 40px;
+        padding-top: 64px;
     }
-    .container {
-        text-align: center;
-        justify-content: center;
-        width: 85%;
-        max-width: 65em;
-        height: 100%;
+    @media only screen and (min-width: 950px) {
+        :global(.s-container) {
+            max-width: 1000px;
+        }
     }
+
 
 </style>

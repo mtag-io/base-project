@@ -9,7 +9,7 @@
     export {klass as class}
     export let size = 32
 
-    const appLogo = `${logo}/logo${roundSize(size, logoSizes)}.png`
+    const appLogo = `${logo}/logo${roundSize(size, logoSizes)}.svg`
 </script>
 
 <Avatar class="{klass}" {size}>
