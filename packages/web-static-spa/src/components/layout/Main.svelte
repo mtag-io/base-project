@@ -62,14 +62,9 @@
 </div>
 
 <style>
-    section{
-        padding-top: 64px;
-    }
     @media only screen and (min-width: 950px) {
         :global(.s-container) {
             max-width: 1000px;
         }
     }
-
-
 </style>

@@ -18,7 +18,15 @@
   body {
     @extend .min-slim;
     scroll-behavior: smooth;
+    scroll-padding-top: 74px;
   }
+  .s-app-bar__wrapper {
+    --s-app-bar-height: 74px;
+  }
+  .s-app-bar{
+    height: 74px;
+  }
+
 
 </style>
 

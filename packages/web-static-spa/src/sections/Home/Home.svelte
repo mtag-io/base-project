@@ -4,20 +4,20 @@
 
 <div class="main">
     <div class="main-text">
-            <div class="text-left">
-                <h3>MULTILINGUAL</h3>
-                <h3>CREATIVE SOLUTIONS</h3>
-            </div>
-            <div>
-                <p class="text-left">If...
-                    <br>
-                    You want to communicate in your clients' language...
-                    <br>
-                    You need to train your staff abroad...
-                    <br>
-                    You seek a reliable voiceover studio.
-                </p>
-            </div>
+<!--            <div class="text-left">-->
+<!--                <h3>MULTILINGUAL</h3>-->
+<!--                <h3>CREATIVE SOLUTIONS</h3>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <p class="text-left">If...-->
+<!--                    <br>-->
+<!--                    You want to communicate in your clients' language...-->
+<!--                    <br>-->
+<!--                    You need to train your staff abroad...-->
+<!--                    <br>-->
+<!--                    You seek a reliable voiceover studio.-->
+<!--                </p>-->
+<!--            </div>-->
     </div>
 </div>
 

@@ -36,8 +36,6 @@
         'booking process',
         'contact'
     ]
-
-    export let height = '74px'
 </script>
 
 <AppBar absolute class=" theme--light s-app-bar s-app-bar__wrapper" style=" width: 100vw; " >
@@ -51,7 +49,7 @@
 
     <!--LOGO-->
     <span class="d-none d-sm-block">
-        <a href="/" class="primary-text" style="font-size: 20px">
+        <a href="/" class="primary-text" style="font-size: 24px">
             <AppLogo/>
             <b>{appName}</b>
          </a>
@@ -80,11 +78,11 @@
             </Button>
         </a>
     </div>
-    <Button class="primary-color d-none d-sm-block pr-2">
+    <Button class="primary-color d-none d-sm-block pr-2 mr-4">
         <Icon path="{mdiAccountCircle}" class="mr-2"/>
         AUTH
     </Button>
-    <Button icon class="primary-color d-sm-none pr-2">
+    <Button icon class="primary-color d-sm-none pr-2 mr-4">
         <Icon path="{mdiAccountCircle}"/>
     </Button>
 
@@ -97,13 +95,3 @@
 
 </div>
 
-
-<style lang="scss" global>
-    .s-app-bar__wrapper {
-      --s-app-bar-height: 74px;
-    }
-    .s-app-bar{
-      height: 74px;
-    }
-
-</style>

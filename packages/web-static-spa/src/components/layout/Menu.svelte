@@ -15,7 +15,7 @@
 <div class="flex-1 justify-center d-none d-sm-block">
 
 
-    <Menu>
+    <Menu hover>
         <div slot="activator" transition:slide>
             <Button text fab
                     class="theme--light"
@@ -39,9 +39,3 @@
 
 </div>
 
-
-<style>
-   .chevron{
-
-   }
-</style>
