@@ -1,7 +1,6 @@
 <script>
     import Layout from 'components/layout/Layout.svelte'
     import Main from 'components/layout/Main.svelte'
-    // import {MaterialApp} from 'svelte-materialify/src'
 </script>
 
 <style lang="scss" global>
@@ -19,7 +18,15 @@
   body {
     @extend .min-slim;
     scroll-behavior: smooth;
+    scroll-padding-top: 74px;
   }
+  .s-app-bar__wrapper {
+    --s-app-bar-height: 74px;
+  }
+  .s-app-bar{
+    height: 74px;
+  }
+
 
 </style>
 
@@ -28,11 +35,6 @@
     <Main/>
 </Layout>
 
-<!--<MaterialApp>-->
-<!--    <div class="d-sm-none">-->
-<!--        Orice-->
-<!--    </div>-->
-<!--</MaterialApp>-->
 
 
 

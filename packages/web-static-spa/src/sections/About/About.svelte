@@ -1,13 +1,16 @@
 <script>
-    import Title from "components/Title.svelte";
-    import TBody from "components/TBody.svelte";
+    import AboutCard from "../../components/cards/About/AboutCard.svelte"
+    import CardContainer from "../../components/cards/CardContainer.svelte";
 
-    export let items
+    //database
+    import {aboutDB} from "../../local-DB/about"
+
+
 </script>
 
-<div>
-    {#each items as item}
-        <Title>{item.title}</Title>
-        <TBody>{item.body}</TBody>
-    {/each}
-</div>
+
+<CardContainer>
+    <AboutCard items={aboutDB}/>
+</CardContainer>
+
+

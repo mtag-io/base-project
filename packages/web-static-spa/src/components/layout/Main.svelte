@@ -1,11 +1,13 @@
 <script>
     import {About, Clients, Catalogue, Contact, BookingProcess, Home} from '../../sections/index'
 
+    import {Container} from 'svelte-materialify/src';
 
     //Databases
-    import {aboutDB} from "../../local-DB/about"
     import {clientsDB} from "../../local-DB/clients"
     import {TestimonialsCLDB} from "../../local-DB/clients-testimonials"
+    import Testimonials from "../../sections/Testimonials/Testimonials.svelte";
+    import Title from "../Title.svelte";
 
     const poster = 'assets/logo/logo400.png'
     const source = ['target.mp4']
@@ -17,51 +19,52 @@
     </section>
 
     <section id="about">
-        <div class="container">
-            <About items={aboutDB}/>
+
+        <div style="width: 100vh; border-radius: 2px; border-color: black" class="theme--light">
+            <div style="margin-left: 24%; padding-bottom: 20px ;padding-top: 30px;">
+                <Title>About</Title>
+            </div>
         </div>
+        <Container style="height: 100vh;padding-top: 50px; margin-bottom: 100px">
+            <About/>
+        </Container>
     </section>
 
     <section id="clients">
-        <div class="container">
-            <Clients clients={clientsDB}
-                     titleT={TestimonialsCLDB}
-                     items={TestimonialsCLDB}/>
-        </div>
+        <Container>
+            <Clients clients={clientsDB}/>
+        </Container>
+    </section>
+
+    <section id="testimonials">
+        <Container>
+            <Testimonials titleT={TestimonialsCLDB} items={TestimonialsCLDB}/>
+        </Container>
     </section>
 
     <section id="catalogue">
-        <div class="container">
+        <Container>
             <Catalogue/>
-        </div>
+        </Container>
     </section>
 
     <section id="booking process">
-        <div class="container">
+        <Container>
             <BookingProcess/>
-        </div>
+        </Container>
     </section>
 
     <section id="contact">
-        <div class="container">
+        <Container>
             <Contact/>
-        </div>
+        </Container>
     </section>
 </div>
 
 <style>
-    section{
-        padding-top: 94px;
-        padding-bottom: 40px;
+    @media only screen and (min-width: 950px) {
+        :global(.s-container) {
+            max-width: 1000px;
+        }
     }
-    .container {
-        text-align: center;
-        justify-content: center;
-        width: 85%;
-        max-width: 65em;
-        height: 100%;
-        /*margin: 0 auto;*/
-
-    }
-
 </style>
